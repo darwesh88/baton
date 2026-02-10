@@ -1,4 +1,4 @@
-# SESSION 0
+# Baton
 
 **Turn any AI into a self-managing developer. You just approve.**
 
@@ -21,8 +21,8 @@ You don't write code. You don't manage tasks. You don't document.
 ## How It Works
 
 ```
-1. Copy SESSION_0.md into your project
-2. Load it in any AI tool (Claude, Cursor, Windsurf, Kiro, etc.)
+1. Copy SESSION_0_v3.1.md + skills/ folder into your project
+2. Load it in any AI tool (Claude Code, Cursor, Windsurf, Kiro, Warp, etc.)
 3. AI interviews you about your project (8 questions)
 4. AI researches best practices for your stack
 5. AI generates all context files
@@ -59,9 +59,11 @@ your-project/
 │   ├── project.md      # Your preferences and decisions
 │   ├── tech-stack.md   # Stack patterns and best practices
 │   ├── patterns.md     # Knowledge cache (grows over time)
-│   └── structure.md    # Project file structure
+│   ├── structure.md    # Project file structure
+│   └── data-model.md   # Database schema (if applicable)
 ├── handoff/
 │   └── SESSION_1.md    # Ready to start building
+├── CLAUDE.md           # IDE config (or .cursorrules, .windsurfrules)
 ├── PROGRESS.md         # Session log
 ├── BACKLOG.md          # Deferred items
 └── FEATURES.md         # User-facing docs
@@ -127,7 +129,7 @@ The protocol is tool-agnostic. It's just markdown.
 ## Project Structure
 
 ```
-session-zero-protocol/
+baton/
 ├── SESSION_0_v3.1.md   # The core protocol (start here)
 ├── SESSION_0.md        # v3.0 (legacy reference)
 ├── skills/             # Proven patterns library
