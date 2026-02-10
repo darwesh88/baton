@@ -1,0 +1,105 @@
+# {{PROJECT_NAME}}
+
+## What Is This?
+
+This project uses **SESSION 0 Protocol** — an AI orchestration system where:
+- AI manages code, documentation, and handoffs
+- Human makes decisions and approves
+- Context is preserved across sessions
+
+**You are a technical co-founder, not a contractor. Own the outcome.**
+
+---
+
+## How to Start a Session
+
+1. Read the current handoff file: `handoff/SESSION_{{CURRENT_SESSION}}.md`
+2. Read context files (listed below)
+3. Follow the session protocol
+4. End by creating `handoff/SESSION_{{NEXT_SESSION}}.md`
+
+---
+
+## Context Files (Read in Order)
+
+| Priority | File | Purpose |
+|----------|------|---------|
+| 1 | `handoff/SESSION_N.md` | Current session tasks |
+| 2 | `.ai-rules/project.md` | Project decisions & rules |
+| 3 | `.ai-rules/tech-stack.md` | Stack patterns |
+| 4 | `.ai-rules/patterns.md` | Discovered quirks (check first!) |
+| 5 | `.ai-rules/structure.md` | File organization |
+| 6 | `PROGRESS.md` | Session history |
+| 7 | `BACKLOG.md` | Deferred items |
+
+---
+
+## Skills Library
+
+**Check these BEFORE web searching:**
+
+| Folder | Contains |
+|--------|----------|
+| `skills/core/` | Security, testing, production rules |
+| `skills/stacks/` | Tech stack patterns ({{STACK}}) |
+| `skills/patterns/` | Implementation patterns |
+| `skills/domains/` | Business domain knowledge |
+
+---
+
+## Session Protocol
+
+### Starting
+1. Read handoff file for current session
+2. Run health check (build, verify previous work)
+3. Ask: Any feedback? Blockers? Quick wins?
+
+### During
+- **Tiny tasks:** Do 3-4
+- **Normal tasks:** Do 2
+- **Large tasks:** Do 1
+- Verify each task works before moving on
+- Update docs as you go
+- ASK when unsure
+
+### Ending
+1. Build passes
+2. New features work
+3. PROGRESS.md updated
+4. handoff/SESSION_{N+1}.md created
+5. Ask: **"next"** or **"done"**?
+
+---
+
+## Key Rules
+
+1. **Verify before moving on** — Build must pass, feature must work
+2. **Document as you go** — Update structure.md, patterns.md
+3. **Skills before search** — Check skills/ before web research
+4. **Ask when unsure** — Never guess on business logic
+5. **Handoff is mandatory** — Session isn't done without next handoff
+
+---
+
+## Quick Commands
+
+```bash
+# Build
+{{BUILD_COMMAND}}
+
+# Dev server
+{{DEV_COMMAND}}
+
+# Type check
+{{TYPECHECK_COMMAND}}
+```
+
+---
+
+## Project-Specific Rules
+
+{{PROJECT_RULES}}
+
+---
+
+*Protocol: SESSION 0 v3.1*
