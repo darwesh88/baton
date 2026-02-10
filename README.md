@@ -23,10 +23,10 @@ You don't write code. You don't manage tasks. You don't document.
 ```
 1. Copy SESSION_0.md into your project
 2. Load it in any AI tool (Claude, Cursor, Windsurf, Kiro, etc.)
-3. AI interviews you about your project (7 questions)
+3. AI interviews you about your project (8 questions)
 4. AI researches best practices for your stack
 5. AI generates all context files
-6. AI builds in small increments (1-3 tasks per session)
+6. AI builds in small increments (1-4 tasks per session)
 7. AI documents everything and creates handoffs
 8. You say "next" to continue, or "done" to stop
 ```
@@ -37,15 +37,15 @@ That's it. The AI manages itself. You're the CEO.
 
 ## Quick Start
 
-### Option 1: Copy the file
-1. Copy `SESSION_0.md` to your project root
+### Option 1: Copy the files
+1. Copy `SESSION_0_v3.1.md` + `skills/` folder to your project root
 2. Open your AI coding tool
-3. Tell it: "Read SESSION_0.md and begin"
+3. Tell it: "Read SESSION_0_v3.1.md and begin"
 
 ### Option 2: Paste directly
-1. Copy the contents of `SESSION_0.md`
+1. Copy the contents of `SESSION_0_v3.1.md`
 2. Paste into any AI chat
-3. AI will start the discovery process
+3. AI will start the discovery process (skills won't load without the folder)
 
 ---
 
@@ -101,6 +101,7 @@ The `skills/` folder contains proven patterns from real projects:
 
 ```
 skills/
+├── core/        # Security, testing, production-readiness, anti-overengineering
 ├── stacks/      # Next.js, Supabase, Tailwind, etc.
 ├── patterns/    # Authentication, file uploads, background jobs
 └── domains/     # E-commerce, SaaS billing, ERP accounting
@@ -127,14 +128,16 @@ The protocol is tool-agnostic. It's just markdown.
 
 ```
 session-zero-protocol/
-├── SESSION_0.md        # The core protocol (start here)
+├── SESSION_0_v3.1.md   # The core protocol (start here)
+├── SESSION_0.md        # v3.0 (legacy reference)
 ├── skills/             # Proven patterns library
+│   ├── core/           # Universal rules (always loaded)
 │   ├── stacks/         # Tech stack guides
 │   ├── patterns/       # Common implementations
 │   └── domains/        # Business domain knowledge
-├── templates/          # File templates
-├── examples/           # Real project examples
-└── guides/             # Tool-specific setup guides
+├── templates/          # IDE config templates
+├── examples/           # Real project examples (coming)
+└── guides/             # Tool-specific setup guides (coming)
 ```
 
 ---

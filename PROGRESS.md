@@ -52,6 +52,39 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 
 ---
 
+### Session 1 - 2026-02-11 (Phase: Completeness + Planning)
+
+**What We Did:**
+
+1. **File Templates Added to SESSION_0_v3.1.md (+317 lines)**
+   - `.ai-rules/project.md` template
+   - `.ai-rules/tech-stack.md` template
+   - `.ai-rules/structure.md` template
+   - `.ai-rules/patterns.md` template
+   - `.ai-rules/data-model.md` template (conditional)
+   - `PROGRESS.md` template
+   - `FEATURES.md` template
+   - `BACKLOG.md` template
+   - `handoff/SESSION_1.md` template (Agent Mindset, Session Protocol, Knowledge Lookup, etc.)
+
+2. **README.md Fixes**
+   - Updated 7 questions → 8 questions (v3.1 added IDE selection)
+   - Updated 1-3 tasks → 1-4 tasks
+   - Quick Start now points to SESSION_0_v3.1.md
+   - Added `core/` to skills tree (was missing)
+   - Project structure now shows v3.1 as primary
+
+3. **Research: Test Project Ideas**
+   - Evaluated 18 app concepts across web, iOS, CLI, bots, extensions
+   - Evaluated AI coding tools (Claude Code, Codex, Cursor, Windsurf, Kiro, Warp)
+   - Recommendation: Claude Code primary, Codex secondary for demos
+
+**Key Decisions:**
+- Protocol is now self-contained — SESSION_0_v3.1.md + skills/ folder is all you need
+- Templates ensure AI generates consistent file formats across any tool
+
+---
+
 ## Final Structure
 
 ```
