@@ -180,6 +180,323 @@ See "IDE Config Templates" section below for exact templates.
 
 ---
 
+## File Templates
+
+### .ai-rules/project.md
+```markdown
+# [Project Name] - Project Rules
+
+## Overview
+[1-2 sentences from Q1]
+
+## User Profile
+- **Role:** [From Q2]
+- **Experience:** [From Q3]
+- **Working Style:** [Inferred preferences]
+
+## Key Decisions
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Stack | [From Q4] | [Why] |
+
+## Constraints
+[From Q5]
+
+## Future Proofing (Long Term)
+- [From Q6 - e.g. Multi-currency, Localisation, Scalability]
+
+## Quality Standards
+- [e.g. "Zero Trust Security", "No Bloat/Lean Code", "Strict Types"]
+
+## Important Rules
+- Small incremental steps
+- User reviews all code before committing
+- Ask before implementing if unsure
+- Research before coding if using unfamiliar tools
+- Never auto-commit - user does commits after reviewing
+```
+
+### .ai-rules/tech-stack.md
+```markdown
+# Tech Stack Best Practices
+
+## Stack
+[Chosen stack from Q4]
+
+## Project Structure
+[From research - typical folder structure for this stack]
+
+## Key Patterns
+[From research - 5-10 bullet points of best practices]
+
+## Common Commands
+[Build, dev, test commands for this stack]
+
+## Pitfalls to Avoid
+[From research - 3-5 common mistakes]
+
+## Security Hardening (MANDATORY)
+- RLS (Row Level Security) on ALL database tables
+- Zod validation on ALL form inputs and API routes
+- Environment variables for ALL secrets (never in code)
+- HTTPS everywhere (enforced by hosting)
+- CSP headers if applicable
+- Rate limiting on public endpoints
+- Signed URLs for private file access
+
+## Database Changes Workflow
+1. Create SQL/migration file with descriptive name
+2. Ask user to run migration
+3. Wait for confirmation before building UI that depends on it
+```
+
+### .ai-rules/structure.md
+```markdown
+# Project Structure
+
+Last updated: [Date]
+
+## Directory Layout
+[Generated tree structure based on chosen stack]
+
+## Key Files
+- `[entry point]` — Main application entry
+- `[config file]` — Configuration
+- [Add key files as project grows]
+
+## Update Rule
+Update this file whenever significant structural changes are made.
+```
+
+### .ai-rules/patterns.md
+```markdown
+# Coding Patterns & Quirks
+
+> **Purpose:** Knowledge cache for patterns and gotchas discovered during development.
+> **Rule 1:** CHECK THIS FILE FIRST before researching library APIs.
+> **Rule 2:** ADD new findings here at end of each session.
+
+## [Category]
+- [Pattern or quirk discovered]
+
+## CLI Quirks
+- [Command issues, interactive prompts, or missing binaries]
+
+---
+
+*Last updated: Session N*
+```
+
+### .ai-rules/data-model.md (if database needed)
+```markdown
+# Database Schema
+
+## Design Principles
+[Key principles for this project's data - from Q&A]
+
+## Tables / Collections
+[Initial schema based on project needs]
+
+## Relationships
+[Key relationships between entities]
+
+## Notes
+- Update this file before creating new tables
+- Agent should reference this before database work
+- Never build UI for tables that don't exist yet
+```
+
+### PROGRESS.md
+```markdown
+# [Project Name] - Progress
+
+## Current Phase
+[e.g., "Phase 1: Core Setup"]
+
+## Session Log
+
+### Session 1 - [Date] (Phase: X)
+**What We Did:**
+- [Detailed list of tasks completed]
+- [Generated Artifacts]
+
+**Key Decisions:**
+- [e.g. Selected Stack X because Y]
+- [e.g. Future Proofing: Added Z field for later]
+
+**Cost:** $X.XX (model used)
+
+**Next Session:**
+- [Bullet points]
+
+---
+
+## Total Project Cost
+| Session | Cost | Model |
+|---------|------|-------|
+| 1 | $X.XX | Claude/GPT |
+| Total | $X.XX | |
+```
+
+### FEATURES.md
+```markdown
+# [Project Name] - Features
+
+> What this app does, written for users (not developers).
+
+## [Feature Category]
+**Added:** Session N
+
+[What it does in plain language]
+
+**How to use:**
+1. Navigate to...
+2. Click...
+3. Result...
+
+---
+
+## Changelog (User-Facing)
+
+### [Month Year]
+- Added [feature]
+- Improved [feature]
+- Fixed [issue]
+```
+
+### BACKLOG.md
+```markdown
+# Backlog
+
+Items discovered during development that aren't immediate priority.
+
+> **Rule:** Agents may ADD items but should not remove without user approval.
+
+## Technical Debt
+- [None yet]
+
+## Enhancements
+- [None yet]
+
+## Research Needed
+- [None yet]
+```
+
+### handoff/SESSION_1.md
+```markdown
+# [Project Name] - Session 1
+
+**Project:** [Brief description]
+**Stack:** [Tech stack]
+
+---
+
+## Agent Mindset
+
+You're a technical co-founder, not a contractor. This is OUR product.
+
+- **Own the outcome** — if something seems wrong, flag it early
+- **Challenge bad approaches** — explain why, propose alternatives
+- **Think long-term** — will this scale? Will it work in 10 sessions?
+- **Be proactive** — suggest improvements, don't just execute requests
+- **Connect to business** — understand WHY we're building each feature
+
+---
+
+## Context Files (READ FIRST - in order)
+
+1. `.ai-rules/project.md` - User profile, preferences, key decisions
+2. `.ai-rules/tech-stack.md` - Stack patterns, best practices
+3. `.ai-rules/structure.md` - Current file/folder structure
+4. `PROGRESS.md` - What's done (session log)
+5. `BACKLOG.md` - Deferred items
+
+---
+
+## Session Protocol
+
+1. **Start:** Read context files, summarize, ask clarifying questions
+2. **Work:** 1-4 tasks per session based on complexity (AI judges)
+3. **End:** Create next handoff, ask user "next" or "done"
+
+---
+
+## Knowledge Lookup Order
+
+When implementing with libraries/APIs:
+1. **Check `patterns.md` FIRST** — it's the project's knowledge cache
+2. **Check `skills/` folder** — curated best practices
+3. **If not found**, check installed version and docs
+4. **If still unsure**, conduct web research
+5. **After discovering quirks**, ADD to `patterns.md` at session end
+
+---
+
+## Architecture-First Rule
+
+Before creating routes, pages, or components:
+1. Plan structure in markdown/comments first
+2. Confirm route groups and hierarchy
+3. Update structure.md BEFORE creating files
+4. Avoid moving files mid-session — plan upfront
+
+---
+
+## Session 0 Summary
+
+[Brief summary of key decisions from the Q&A]
+
+---
+
+## First Tasks
+
+1. [First logical step based on project type]
+2. [Second step]
+
+---
+
+## When Unsure, ASK
+
+- If a design decision is unclear, ask before implementing
+- If you encounter errors, report with full context
+- If scope seems bigger than expected, pause and discuss
+- Never guess on business logic - ask user to explain
+
+---
+
+## Validation Checkpoint
+
+Before declaring any task complete:
+1. Verify the code works (build/run/test as appropriate)
+2. If UI changes, visually confirm
+3. Update relevant documentation
+
+Do NOT move to next task until validation passes.
+
+---
+
+## Database Changes Workflow
+
+1. Create migration file with descriptive name
+2. Ask user to run migration in database
+3. Wait for confirmation before building UI that depends on tables
+4. Regenerate types if using typed database client
+
+---
+
+## Lessons Learned (MANDATORY)
+
+Every handoff MUST include a "Lessons Learned" section with:
+- Breaking changes discovered
+- API quirks or gotchas
+- Decisions that worked well
+- Things that wasted time
+
+This section is REQUIRED, not optional.
+```
+
+---
+
 ## IDE Config Templates
 
 ### CLAUDE.md (Claude Code)
