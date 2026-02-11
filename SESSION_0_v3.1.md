@@ -110,7 +110,14 @@ If project is in a specialized domain:
 - Healthcare → `skills/domains/healthcare.md`
 - etc.
 
-### Step 5: Web Research (Only If Needed)
+### Step 5: Verify Current Documentation
+
+**Never assume. Always verify.**
+- Check official docs for any library, API, or service the project uses
+- Don't assume patterns from similar tools — confirm specifics (endpoints, auth methods, model names, config format)
+- Documentation changes faster than your training data
+
+### Step 6: Web Research (Only If Needed)
 
 If skill files don't exist or are incomplete, conduct web research on:
 1. Current best practices for the chosen tech stack

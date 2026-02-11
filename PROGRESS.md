@@ -100,6 +100,11 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 - One UI/UX skill file is enough — keeps it simple, covers the basics
 - Goal: first-time users see polished output, not ugly AI defaults
 
+2. **Protocol Evolution from GhostPost Test**
+   - Added "Step 5: Verify Current Documentation" to SESSION_0_v3.1.md Phase 2
+   - Created `skills/patterns/api-integration.md` — retry logic, token limits, truncation handling, error UX, rate limiting
+   - Split: universal lesson (verify docs) → protocol, specific lesson (API patterns) → skill file
+
 ---
 
 ## Final Structure
@@ -125,6 +130,7 @@ session-zero-protocol/
 │   │   ├── nextjs.md
 │   │   └── supabase.md
 │   ├── patterns/                          # Load as needed
+│   │   └── api-integration.md
 │   └── domains/                           # Load if applicable
 │
 ├── templates/
