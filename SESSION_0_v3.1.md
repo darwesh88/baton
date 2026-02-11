@@ -81,6 +81,7 @@ Read these files from the skills library:
 - `skills/core/anti-overengineering.md` — Keep it simple (YAGNI)
 - `skills/core/milestones.md` — Phase-based progress tracking
 - `skills/core/cost-awareness.md` — Token/cost efficiency
+- `skills/core/ui-ux.md` — Look good out of the gate
 
 **Load at Session 8+:**
 - `skills/core/launch-prep.md` — When ready to ship

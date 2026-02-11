@@ -103,7 +103,7 @@ The `skills/` folder contains proven patterns from real projects:
 
 ```
 skills/
-├── core/        # Security, testing, production-readiness, anti-overengineering
+├── core/        # Security, testing, UI/UX, production-readiness, anti-overengineering
 ├── stacks/      # Next.js, Supabase, Tailwind, etc.
 ├── patterns/    # Authentication, file uploads, background jobs
 └── domains/     # E-commerce, SaaS billing, ERP accounting

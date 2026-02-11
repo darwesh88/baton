@@ -85,6 +85,23 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 
 ---
 
+### Session 2 - 2026-02-11 (Phase: Pre-Test Polish)
+
+**What We Did:**
+
+1. **UI/UX Core Skill Added**
+   - `skills/core/ui-ux.md` — Ensures AI builds good-looking UIs from first build
+   - Covers: layout defaults, typography, color, components, responsive, states (loading/empty/error/success), accessibility basics
+   - Default stack: shadcn/ui + Lucide icons + Inter font
+   - Added to SESSION_0_v3.1.md core skills loading list
+   - Added to README.md skills description
+
+**Key Decisions:**
+- One UI/UX skill file is enough — keeps it simple, covers the basics
+- Goal: first-time users see polished output, not ugly AI defaults
+
+---
+
 ## Final Structure
 
 ```
@@ -102,7 +119,8 @@ session-zero-protocol/
 │   │   ├── anti-overengineering.md
 │   │   ├── milestones.md
 │   │   ├── launch-prep.md
-│   │   └── cost-awareness.md
+│   │   ├── cost-awareness.md
+│   │   └── ui-ux.md
 │   ├── stacks/                            # Load based on tech
 │   │   ├── nextjs.md
 │   │   └── supabase.md
