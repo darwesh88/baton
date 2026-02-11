@@ -139,11 +139,56 @@ session-zero-protocol/
 
 ---
 
-## Status: Ready to Release
+## Test Project Ideas (Researched 2026-02-11)
 
-The protocol is complete and usable. Everything else is enhancement.
+Ranked by size (smallest first). Each will use baton to validate the protocol.
+
+### Web Apps
+| # | Name | What | Sessions |
+|---|------|------|----------|
+| 1 | GhostPost | Paste tweet variations → AI scores which will perform best before posting | 3 |
+| 2 | PostMorph | Write once → AI adapts tone/format per platform (X, LinkedIn, Bluesky) | 3 |
+| 3 | ThreadWeaver | Paste any URL → get a ready-to-post X thread | 3 |
+| 4 | OneMetric | One daily score + one recommendation instead of 47 analytics charts | 3 |
+| 5 | ReplyRadar | Surfaces high-momentum tweets to reply to for max exposure (Chrome ext) | 3 |
+| 6 | Content Repurposer | Blog post → 10 platform-specific social posts | 3-4 |
+| 7 | ADHD Task Decomposer | Paste vague task → tiny sequenced micro-steps with timers | 3-4 |
+| 8 | Vibe Code Security Scanner | CLI that scans AI-generated code for common vulnerabilities | 3-4 |
+| 9 | README Generator | Point at repo → auto-generates README + API docs | 3-4 |
+| 10 | ShipLog | GitHub commits → auto-drafted "build in public" social posts | 3-4 |
+
+### iOS Apps (SwiftUI)
+| # | Name | What | Sessions |
+|---|------|------|----------|
+| 11 | QuietHours | Calendar-aware auto-DND + auto-reply during meetings | 2-3 |
+| 12 | GlassHabit | Minimal habit tracker with Liquid Glass + Apple Watch | 3 |
+| 13 | ParkPin | Auto parking pin on Bluetooth disconnect + meter timer | 3 |
+| 14 | CostPerWear | Log clothes + wears, see cost-per-wear ROI | 3 |
+| 15 | MoodRing | One-tap mood log correlated with HealthKit data | 3-4 |
+| 16 | SplitSnap | Photo receipt → OCR → tap to claim items → split bill | 3-4 |
+
+### Other Platforms
+| # | Name | Platform | What | Sessions |
+|---|------|----------|------|----------|
+| 17 | ReceiptSnap | WhatsApp Bot | Forward receipt photo → expense tracking | 4-5 |
+| 18 | StandupBot | Slack/Discord | Async standup collector + daily summary | 3-4 |
+| 19 | PageDiff | Chrome Ext | Snapshot webpage → pixel-level change detection | 4-5 |
+| 20 | LangFlash | Telegram Bot | Spaced-repetition vocab cards in chat | 3-4 |
+| 21 | Dep Drift | CLI | Scan deps → prioritized upgrade report with changelog summaries | 3-4 |
+| 22 | DiffMail | API Service | POST markdown → beautiful HTML email back | 3-4 |
+
+### Domain-Specific
+| # | Name | What | Sessions |
+|---|------|------|----------|
+| 23 | HoardValue | Jewellery/gold estimator with live prices + shareable value cards | 3-4 |
+
+---
+
+## Status: Ready to Test
+
+Protocol is complete. Next step: pick a test project, run baton, record the session.
 
 ---
 
 ## Protocol Version
-SESSION_0 v3.1 — 2026-02-10
+SESSION_0 v3.1 — 2026-02-11
