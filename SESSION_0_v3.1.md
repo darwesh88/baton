@@ -662,6 +662,11 @@ Same content as .cursorrules — Windsurf uses similar format.
 8. Create handoff/SESSION_{N+1}.md
 9. Include "Lessons Learned" section
 
+**Protocol Evolution (Cannot Skip):**
+10. Ask yourself: "Did I discover anything this session that would improve SESSION_0 for ALL future projects?"
+11. If yes — tell the user what you found and propose the update. Do NOT modify SESSION_0 without user approval.
+12. If no — that's fine. Not every session produces a universal insight.
+
 ---
 
 ## Session Continuation Protocol
