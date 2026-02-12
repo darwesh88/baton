@@ -218,4 +218,4 @@ SUPABASE_SERVICE_ROLE_KEY=      # No prefix = server-only
 
 ---
 
-*Last updated: Session 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*

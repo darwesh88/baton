@@ -390,4 +390,4 @@ if (!data) {
 
 ---
 
-*Last updated: Session 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*

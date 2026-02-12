@@ -168,4 +168,4 @@ Don't hide it. Don't keep building on bad foundation.
 
 ---
 
-*Last updated: SESSION 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*

@@ -2,7 +2,7 @@
 
 ## What Is This?
 
-This project uses **SESSION 0 Protocol** — an AI orchestration system where:
+This project uses **Baton Protocol** — an AI orchestration system where:
 - AI manages code, documentation, and handoffs
 - Human makes decisions and approves
 - Context is preserved across sessions
@@ -102,4 +102,4 @@ This project uses **SESSION 0 Protocol** — an AI orchestration system where:
 
 ---
 
-*Protocol: SESSION 0 v3.1*
+*Protocol: Baton v3.1*

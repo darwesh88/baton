@@ -1,4 +1,4 @@
-# SESSION 0 Protocol - Progress
+# Baton Protocol - Progress
 
 ## Current Phase
 Phase 1: Core Protocol + Skills Library — COMPLETE
@@ -16,7 +16,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
    - Target: Non-coders (primary), devs (secondary)
    - Distribution: GitHub + copy-paste
 
-2. **SESSION_0 v3.1 Created**
+2. **Baton v3.1 Created**
    - Flexible task count (1-4 based on size)
    - Session continuation protocol ("next" to continue)
    - IDE config generation (CLAUDE.md, .cursorrules)
@@ -48,7 +48,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 - 2025/2026 AI coding pain points
 - Context loss as #1 problem
 - Model capabilities (Opus 4.5/4.6, GPT-5.3-Codex, Gemini 3 Pro)
-- Validated SESSION_0 solves real problems
+- Validated Baton solves real problems
 
 ---
 
@@ -56,7 +56,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 
 **What We Did:**
 
-1. **File Templates Added to SESSION_0_v3.1.md (+317 lines)**
+1. **File Templates Added to BATON_v3.1.md (+317 lines)**
    - `.ai-rules/project.md` template
    - `.ai-rules/tech-stack.md` template
    - `.ai-rules/structure.md` template
@@ -70,7 +70,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 2. **README.md Fixes**
    - Updated 7 questions → 8 questions (v3.1 added IDE selection)
    - Updated 1-3 tasks → 1-4 tasks
-   - Quick Start now points to SESSION_0_v3.1.md
+   - Quick Start now points to BATON_v3.1.md
    - Added `core/` to skills tree (was missing)
    - Project structure now shows v3.1 as primary
 
@@ -80,7 +80,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
    - Recommendation: Claude Code primary, Codex secondary for demos
 
 **Key Decisions:**
-- Protocol is now self-contained — SESSION_0_v3.1.md + skills/ folder is all you need
+- Protocol is now self-contained — BATON_v3.1.md + skills/ folder is all you need
 - Templates ensure AI generates consistent file formats across any tool
 
 ---
@@ -93,7 +93,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
    - `skills/core/ui-ux.md` — Ensures AI builds good-looking UIs from first build
    - Covers: layout defaults, typography, color, components, responsive, states (loading/empty/error/success), accessibility basics
    - Default stack: shadcn/ui + Lucide icons + Inter font
-   - Added to SESSION_0_v3.1.md core skills loading list
+   - Added to BATON_v3.1.md core skills loading list
    - Added to README.md skills description
 
 **Key Decisions:**
@@ -101,7 +101,7 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 - Goal: first-time users see polished output, not ugly AI defaults
 
 2. **Protocol Evolution from GhostPost Test**
-   - Added "Step 5: Verify Current Documentation" to SESSION_0_v3.1.md Phase 2
+   - Added "Step 5: Verify Current Documentation" to BATON_v3.1.md Phase 2
    - Created `skills/patterns/api-integration.md` — retry logic, token limits, truncation handling, error UX, rate limiting
    - Split: universal lesson (verify docs) → protocol, specific lesson (API patterns) → skill file
 
@@ -110,10 +110,10 @@ Phase 1: Core Protocol + Skills Library — COMPLETE
 ## Final Structure
 
 ```
-session-zero-protocol/
+baton/
 ├── README.md                              # Overview + quick start
-├── SESSION_0.md                           # v3.0 (original)
-├── SESSION_0_v3.1.md                      # v3.1 (current)
+├── SESSION_0.md                           # v3.0 (legacy)
+├── BATON_v3.1.md                          # v3.1 (current)
 ├── PROGRESS.md                            # This file
 │
 ├── skills/
@@ -147,7 +147,7 @@ session-zero-protocol/
 ## Backlog
 
 ### Ready for v1.0 Release
-- [x] Core protocol (SESSION_0 v3.1)
+- [x] Core protocol (Baton v3.1)
 - [x] Core skills (7 files)
 - [x] Stack skills (2 starter files)
 - [x] IDE templates
@@ -215,4 +215,4 @@ Protocol is complete. Next step: pick a test project, run baton, record the sess
 ---
 
 ## Protocol Version
-SESSION_0 v3.1 — 2026-02-11
+Baton v3.1 — 2026-02-11

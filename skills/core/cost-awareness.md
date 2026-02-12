@@ -189,10 +189,10 @@ Rough guidelines:
 |---------|-------------------|
 | 1 page of code (~50 lines) | ~500 tokens |
 | Average source file | 500-2000 tokens |
-| SESSION_0.md | ~2000 tokens |
+| BATON_v3.1.md | ~2000 tokens |
 | All .ai-rules files | ~3000-5000 tokens |
 | Web search results | ~1000-3000 tokens |
 
 ---
 
-*Last updated: SESSION 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*

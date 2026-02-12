@@ -137,7 +137,7 @@ Solution:
 
 ## Custom Milestones
 
-For non-standard projects, define milestones in Session 0:
+For non-standard projects, define milestones in Baton setup:
 
 ```markdown
 ## Project Milestones
@@ -155,4 +155,4 @@ Every project needs at least:
 
 ---
 
-*Last updated: SESSION 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*

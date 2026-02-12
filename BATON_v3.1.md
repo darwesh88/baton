@@ -1,4 +1,4 @@
-# SESSION 0 — AI Orchestration Protocol v3.1
+# Baton — AI Orchestration Protocol v3.1
 
 > **What is this?** This document turns any AI assistant into a self-managing project partner.
 > Load this file at the start of a new project. The AI will interview you, research best practices, generate all context files, and manage itself across sessions — you just approve.
@@ -165,7 +165,7 @@ Create the appropriate config file for the user's AI tool:
 
 **IDE Config Must Include:**
 1. Project overview
-2. SESSION 0 protocol explanation
+2. Baton protocol explanation
 3. Where to find context files
 4. Where to find skills
 5. Current session to load
@@ -450,7 +450,7 @@ Before creating routes, pages, or components:
 
 ---
 
-## Session 0 Summary
+## Baton Summary
 
 [Brief summary of key decisions from the Q&A]
 
@@ -514,7 +514,7 @@ This section is REQUIRED, not optional.
 
 ## What Is This?
 
-This project uses **SESSION 0 Protocol** — an AI orchestration system where:
+This project uses **Baton Protocol** — an AI orchestration system where:
 - AI manages code, documentation, and handoffs
 - Human makes decisions and approves
 - Context is preserved across sessions
@@ -567,9 +567,9 @@ Check these BEFORE web searching:
 ### .cursorrules (Cursor)
 
 ```
-# SESSION 0 Protocol
+# Baton Protocol
 
-This project uses SESSION 0 — an AI orchestration system.
+This project uses Baton — an AI orchestration system.
 
 ## Start Each Session
 1. Read handoff/SESSION_N.md (current session)
@@ -671,8 +671,8 @@ Same content as .cursorrules — Windsurf uses similar format.
 9. Include "Lessons Learned" section
 
 **Protocol Evolution (Cannot Skip):**
-10. Ask yourself: "Did I discover anything this session that would improve SESSION_0 for ALL future projects?"
-11. If yes — tell the user what you found and propose the update. Do NOT modify SESSION_0 without user approval.
+10. Ask yourself: "Did I discover anything this session that would improve Baton for ALL future projects?"
+11. If yes — tell the user what you found and propose the update. Do NOT modify Baton without user approval.
 12. If no — that's fine. Not every session produces a universal insight.
 
 ---
@@ -784,7 +784,7 @@ DEFERRED
 
 ## Protocol Update Rule
 
-Update SESSION_0 ONLY when you discover:
+Update Baton ONLY when you discover:
 - A pattern that saves ANY future project significant time
 - A gotcha that cost >30 minutes and applies universally
 - A workflow improvement that is domain-agnostic
@@ -798,11 +798,11 @@ Do NOT update for:
 
 ---
 
-## After Session 0 Completes
+## After Baton Completes
 
 Tell the user:
 
-> "Session 0 complete. I've created:
+> "Baton setup complete. I've created:
 > - Project context files (.ai-rules/)
 > - IDE config ([CLAUDE.md / .cursorrules / etc.])
 > - First session handoff (handoff/SESSION_1.md)

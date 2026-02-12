@@ -143,4 +143,4 @@ This gives a professional baseline. User can customize later.
 
 ---
 
-*Last updated: SESSION 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*

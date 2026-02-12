@@ -6,7 +6,7 @@
 
 ## What Is This?
 
-SESSION 0 is an AI orchestration protocol. Load one markdown file, and any AI coding assistant becomes:
+Baton is an AI orchestration protocol. Load one markdown file, and any AI coding assistant becomes:
 
 - A developer that writes code
 - A project manager that tracks progress
@@ -21,7 +21,7 @@ You don't write code. You don't manage tasks. You don't document.
 ## How It Works
 
 ```
-1. Copy SESSION_0_v3.1.md + skills/ folder into your project
+1. Copy BATON_v3.1.md + skills/ folder into your project
 2. Load it in any AI tool (Claude Code, Cursor, Windsurf, Kiro, Warp, etc.)
 3. AI interviews you about your project (8 questions)
 4. AI researches best practices for your stack
@@ -38,12 +38,12 @@ That's it. The AI manages itself. You're the CEO.
 ## Quick Start
 
 ### Option 1: Copy the files
-1. Copy `SESSION_0_v3.1.md` + `skills/` folder to your project root
+1. Copy `BATON_v3.1.md` + `skills/` folder to your project root
 2. Open your AI coding tool
-3. Tell it: "Read SESSION_0_v3.1.md and begin"
+3. Tell it: "Read BATON_v3.1.md and begin"
 
 ### Option 2: Paste directly
-1. Copy the contents of `SESSION_0_v3.1.md`
+1. Copy the contents of `BATON_v3.1.md`
 2. Paste into any AI chat
 3. AI will start the discovery process (skills won't load without the folder)
 
@@ -51,7 +51,7 @@ That's it. The AI manages itself. You're the CEO.
 
 ## What Gets Created
 
-After SESSION 0 completes, your project has:
+After Baton completes, your project has:
 
 ```
 your-project/
@@ -130,7 +130,7 @@ The protocol is tool-agnostic. It's just markdown.
 
 ```
 baton/
-├── SESSION_0_v3.1.md   # The core protocol (start here)
+├── BATON_v3.1.md       # The core protocol (start here)
 ├── SESSION_0.md        # v3.0 (legacy reference)
 ├── skills/             # Proven patterns library
 │   ├── core/           # Universal rules (always loaded)

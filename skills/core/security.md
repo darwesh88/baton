@@ -297,4 +297,4 @@ Before any release:
 
 ---
 
-*Last updated: SESSION 0 Protocol v3.1*
+*Last updated: Baton Protocol v3.1*
