@@ -501,6 +501,21 @@ Every handoff MUST include a "Lessons Learned" section with:
 - Things that wasted time
 
 This section is REQUIRED, not optional.
+
+---
+
+## Session Triggers
+
+These activate automatically based on session number. **For small/MVP builds (3-5 sessions), compress or skip — use judgement based on project size.**
+
+| Trigger | Default | Small Build (3-5 sessions) |
+|---------|---------|---------------------------|
+| Review milestones, check if on track | Session 5+ | Session 2+ |
+| Load `skills/core/launch-prep.md` | Session 8+ | Session 3+ |
+| Real Usage Gate — pause features, use app for real, fix friction | Session 10+ | Before final session |
+| Load `skills/core/production-readiness.md` checklist | Before launch | Before launch |
+
+**Rule:** If the project is close to done earlier than expected, trigger earlier. Don't wait for a session number — use context.
 ```
 
 ---
