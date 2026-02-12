@@ -80,7 +80,6 @@ Read these files from the skills library:
 - `skills/core/production-readiness.md` — Launch checklist
 - `skills/core/anti-overengineering.md` — Keep it simple (YAGNI)
 - `skills/core/milestones.md` — Phase-based progress tracking
-- `skills/core/cost-awareness.md` — Token/cost efficiency
 - `skills/core/ui-ux.md` — Look good out of the gate
 
 **Load at Session 8+:**
@@ -332,18 +331,8 @@ Update this file whenever significant structural changes are made.
 - [e.g. Selected Stack X because Y]
 - [e.g. Future Proofing: Added Z field for later]
 
-**Cost:** $X.XX (model used)
-
 **Next Session:**
 - [Bullet points]
-
----
-
-## Total Project Cost
-| Session | Cost | Model |
-|---------|------|-------|
-| 1 | $X.XX | Claude/GPT |
-| Total | $X.XX | |
 ```
 
 ### FEATURES.md
