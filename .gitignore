@@ -12,3 +12,8 @@ Thumbs.db
 test-projects/
 .env
 .env.local
+
+# CLI generated files
+cli/templates/
+cli/node_modules/
+cli/*.tgz

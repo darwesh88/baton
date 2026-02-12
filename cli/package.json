@@ -1,0 +1,36 @@
+{
+  "name": "create-baton",
+  "version": "1.0.0",
+  "description": "Set up Baton AI orchestration protocol in any project",
+  "bin": {
+    "create-baton": "./bin/create-baton.js"
+  },
+  "scripts": {
+    "prep": "node scripts/prep-templates.js",
+    "prepublishOnly": "node scripts/prep-templates.js"
+  },
+  "keywords": [
+    "ai",
+    "orchestration",
+    "protocol",
+    "claude",
+    "cursor",
+    "windsurf",
+    "baton",
+    "scaffolding"
+  ],
+  "author": "darwesh88",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darwesh88/baton.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/darwesh88/baton",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2"
+  }
+}

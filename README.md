@@ -37,12 +37,18 @@ That's it. The AI manages itself. You're the CEO.
 
 ## Quick Start
 
-### Option 1: Copy the files
+### Option 1: CLI (recommended)
+```bash
+npx create-baton
+```
+Asks 3 questions, sets up everything — protocol, skills, IDE config, folder structure.
+
+### Option 2: Copy the files
 1. Copy `BATON_v3.1.md` + `skills/` folder to your project root
 2. Open your AI coding tool
 3. Tell it: "Read BATON_v3.1.md and begin"
 
-### Option 2: Paste directly
+### Option 3: Paste directly
 1. Copy the contents of `BATON_v3.1.md`
 2. Paste into any AI chat
 3. AI will start the discovery process (skills won't load without the folder)
