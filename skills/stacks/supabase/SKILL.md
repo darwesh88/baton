@@ -1,3 +1,12 @@
+---
+name: supabase
+description: >-
+  Supabase patterns for production applications. Covers client setup, RLS
+  policies, database patterns, type generation, storage, auth, and
+  migrations. Use when working with Supabase, PostgreSQL via Supabase,
+  or when setting up backend with Supabase.
+---
+
 # Supabase Skill File
 
 > Proven patterns from production Supabase projects. Check here before searching the web.

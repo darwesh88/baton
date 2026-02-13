@@ -1,3 +1,12 @@
+---
+name: anti-overengineering
+description: >-
+  Prevents AI from adding unnecessary complexity, features, and abstractions.
+  Enforces YAGNI, size limits, and simplicity-first approach.
+  Use when building features, reviewing code complexity, or when the AI
+  starts adding things nobody asked for.
+---
+
 # Anti-Over-Engineering Skill
 
 > YAGNI: You Aren't Gonna Need It.

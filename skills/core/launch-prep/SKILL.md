@@ -1,3 +1,12 @@
+---
+name: launch-prep
+description: >-
+  Launch preparation and shipping guidance. Covers pre-launch questions,
+  launch options (silent/soft/public), launch checklists, and post-launch
+  protocol. Use at session 8+ when approaching launch, when the user
+  mentions launching, shipping, or getting real users.
+---
+
 # Launch Prep Skill
 
 > Building is easy. Launching is hard.

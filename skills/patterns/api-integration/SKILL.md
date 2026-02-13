@@ -1,3 +1,12 @@
+---
+name: api-integration
+description: >-
+  External API integration patterns. Covers retry logic, error handling,
+  AI/LLM API specifics, rate limiting, and environment variable management.
+  Use when integrating external APIs, calling AI model APIs, or when
+  dealing with API failures and rate limits.
+---
+
 # API Integration Skill
 
 > External APIs fail. Plan for it from line one.

@@ -27,23 +27,23 @@ function scaffold(dest, { tool, stack, projectName }) {
   // Create domains/ (empty, for user to add)
   fs.mkdirSync(path.join(skillsDest, 'domains'), { recursive: true });
 
-  // Copy stack-specific skills
+  // Copy stack-specific skills (each is a directory with SKILL.md)
   const stackSkills = STACK_MAP[stack] || [];
-  if (stackSkills.length > 0) {
-    fs.mkdirSync(path.join(skillsDest, 'stacks'), { recursive: true });
-    for (const file of stackSkills) {
-      const src = path.join(skillsSrc, 'stacks', file);
-      if (fs.existsSync(src)) {
-        fs.copyFileSync(src, path.join(skillsDest, 'stacks', file));
-      }
+  fs.mkdirSync(path.join(skillsDest, 'stacks'), { recursive: true });
+  for (const skillDir of stackSkills) {
+    const src = path.join(skillsSrc, 'stacks', skillDir);
+    if (fs.existsSync(src)) {
+      copyDir(src, path.join(skillsDest, 'stacks', skillDir));
     }
-  } else {
-    fs.mkdirSync(path.join(skillsDest, 'stacks'), { recursive: true });
   }
 
-  const coreCount = fs.readdirSync(path.join(skillsDest, 'core')).length;
+  const coreCount = fs.readdirSync(path.join(skillsDest, 'core')).filter(
+    f => fs.statSync(path.join(skillsDest, 'core', f)).isDirectory()
+  ).length;
   const stackCount = stackSkills.length;
-  const patternCount = fs.readdirSync(path.join(skillsDest, 'patterns')).length;
+  const patternCount = fs.readdirSync(path.join(skillsDest, 'patterns')).filter(
+    f => fs.statSync(path.join(skillsDest, 'patterns', f)).isDirectory()
+  ).length;
   results.push(`Copied skills/ (${coreCount} core + ${stackCount} stack + ${patternCount} pattern)`);
 
   // 3. Create .ai-rules/ with stub files
@@ -68,25 +68,36 @@ function scaffold(dest, { tool, stack, projectName }) {
 
   // 5. Create IDE config file from template
   const ide = IDE_MAP[tool] || IDE_MAP['Other'];
-  const templatePath = path.join(TEMPLATES_DIR, 'ide', ide.template);
-  let templateContent = fs.readFileSync(templatePath, 'utf-8');
-
-  // Replace template variables
   const stackLabel = STACK_LABEL[stack] || '';
-  templateContent = templateContent
-    .replace(/\{\{PROJECT_NAME\}\}/g, projectName)
-    .replace(/\{\{STACK\}\}/g, stackLabel)
-    .replace(/\{\{CURRENT_SESSION\}\}/g, '1')
-    .replace(/\{\{NEXT_SESSION\}\}/g, '2')
-    .replace(/\{\{BUILD_COMMAND\}\}/g, 'npm run build')
-    .replace(/\{\{DEV_COMMAND\}\}/g, 'npm run dev')
-    .replace(/\{\{TYPECHECK_COMMAND\}\}/g, 'npx tsc --noEmit')
-    .replace(/\{\{PROJECT_RULES\}\}/g, '<!-- AI will add project-specific rules here -->');
 
-  fs.writeFileSync(path.join(dest, ide.file), templateContent);
-  results.push(`Created ${ide.file}`);
+  if (ide.template) {
+    // Template-based IDE config (Claude Code, Cursor, Windsurf, etc.)
+    const templatePath = path.join(TEMPLATES_DIR, 'ide', ide.template);
+    let templateContent = fs.readFileSync(templatePath, 'utf-8');
 
-  // 6. Create PROGRESS.md, BACKLOG.md, FEATURES.md
+    templateContent = templateContent
+      .replace(/\{\{PROJECT_NAME\}\}/g, projectName)
+      .replace(/\{\{STACK\}\}/g, stackLabel)
+      .replace(/\{\{CURRENT_SESSION\}\}/g, '1')
+      .replace(/\{\{NEXT_SESSION\}\}/g, '2')
+      .replace(/\{\{BUILD_COMMAND\}\}/g, 'npm run build')
+      .replace(/\{\{DEV_COMMAND\}\}/g, 'npm run dev')
+      .replace(/\{\{TYPECHECK_COMMAND\}\}/g, 'npx tsc --noEmit')
+      .replace(/\{\{PROJECT_RULES\}\}/g, '<!-- AI will add project-specific rules here -->');
+
+    fs.writeFileSync(path.join(dest, ide.file), templateContent);
+    results.push(`Created ${ide.file}`);
+  } else {
+    // Codex — uses AGENTS.md directly (already generated in step 6)
+    results.push('Using AGENTS.md as IDE config (Codex)');
+  }
+
+  // 6. Generate AGENTS.md (universal standard for AI coding agents)
+  const agentsMd = generateAgentsMd(projectName, stackLabel);
+  fs.writeFileSync(path.join(dest, 'AGENTS.md'), agentsMd);
+  results.push('Generated AGENTS.md');
+
+  // 7. Create PROGRESS.md, BACKLOG.md, FEATURES.md
   fs.writeFileSync(path.join(dest, 'PROGRESS.md'),
     `# Progress — ${projectName}\n\n## Sessions\n\n_No sessions yet. AI will log progress here._\n`);
   fs.writeFileSync(path.join(dest, 'BACKLOG.md'),
@@ -96,6 +107,72 @@ function scaffold(dest, { tool, stack, projectName }) {
   results.push('Created PROGRESS.md, BACKLOG.md, FEATURES.md');
 
   return results;
+}
+
+function generateAgentsMd(projectName, stack) {
+  const stackLine = stack ? `- **Stack:** ${stack}` : '- **Stack:** (to be determined during Session Zero)';
+  return `# AGENTS.md
+
+This file provides guidance to AI coding agents working with this repository.
+
+## Project Overview
+
+${projectName} — bootstrapped with the Baton protocol.
+
+${stackLine}
+- **Protocol:** Baton v3.1 (AI orchestration protocol)
+- **Architecture:** See \`.ai-rules/\` for project context (generated during Session Zero)
+
+## Getting Started
+
+This project uses the Baton protocol for AI-assisted development.
+
+1. Read \`BATON_v3.1.md\` — the orchestration protocol
+2. Read \`.ai-rules/\` — project context files (AI-generated)
+3. Read \`skills/\` — curated best practices for this stack
+4. Check \`handoff/\` — session handoff files for continuity
+
+## Build & Development Commands
+
+\`\`\`bash
+# Install dependencies
+npm install
+
+# Development
+npm run dev
+
+# Build
+npm run build
+\`\`\`
+
+## Code Style & Conventions
+
+See \`.ai-rules/patterns.md\` for project-specific patterns.
+See \`skills/core/\` for universal rules (security, testing, anti-overengineering).
+
+## Project Structure
+
+\`\`\`
+BATON_v3.1.md          # AI orchestration protocol
+.ai-rules/             # Project context (AI-generated)
+skills/                # Best practice skills
+  core/                # Universal rules
+  stacks/              # Stack-specific patterns
+  patterns/            # Implementation patterns
+handoff/               # Session handoff files
+PROGRESS.md            # Session progress log
+BACKLOG.md             # Deferred items
+\`\`\`
+
+## Agent Boundaries
+
+This project follows the Baton protocol. Key rules:
+- Read BATON_v3.1.md before starting work
+- Check skills/ before web searching
+- Document discoveries in .ai-rules/patterns.md
+- Create handoff files at session end
+- Update PROGRESS.md after each session
+`;
 }
 
 function copyDir(src, dest) {

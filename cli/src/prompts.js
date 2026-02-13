@@ -17,6 +17,7 @@ async function askQuestions() {
         { title: 'Claude Code', value: 'Claude Code' },
         { title: 'Cursor', value: 'Cursor' },
         { title: 'Windsurf', value: 'Windsurf' },
+        { title: 'Codex (OpenAI)', value: 'Codex' },
         { title: 'Kiro', value: 'Kiro' },
         { title: 'Warp', value: 'Warp' },
         { title: 'Other', value: 'Other' },

@@ -1,3 +1,12 @@
+---
+name: testing
+description: >-
+  Universal testing standards for any project. Covers build verification,
+  smoke testing, automated test levels, and session testing protocol.
+  Use when setting up tests, reviewing test coverage, discussing testing
+  strategy, or when the user asks about testing.
+---
+
 # Testing Skill — Universal Rules
 
 > Testing standards that apply to every project.

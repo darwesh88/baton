@@ -1,3 +1,12 @@
+---
+name: ui-ux
+description: >-
+  UI/UX design defaults and polish standards for AI-generated interfaces.
+  Covers layout, typography, color, responsive rules, component libraries,
+  and accessibility basics. Use when building UI, reviewing design quality,
+  or when screens look unpolished.
+---
+
 # UI/UX Skill — Look Good Out of the Gate
 
 > Every screen should look polished on first build. No "we'll fix the UI later."

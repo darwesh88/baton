@@ -75,38 +75,38 @@ Before generating files, gather knowledge.
 ### Step 1: Load Core Skills (Always)
 
 Read these files from the skills library:
-- `skills/core/security.md` — Universal security rules
-- `skills/core/testing.md` — Testing standards
-- `skills/core/production-readiness.md` — Launch checklist
-- `skills/core/anti-overengineering.md` — Keep it simple (YAGNI)
-- `skills/core/milestones.md` — Phase-based progress tracking
-- `skills/core/ui-ux.md` — Look good out of the gate
+- `skills/core/security/SKILL.md` — Universal security rules
+- `skills/core/testing/SKILL.md` — Testing standards
+- `skills/core/production-readiness/SKILL.md` — Launch checklist
+- `skills/core/anti-overengineering/SKILL.md` — Keep it simple (YAGNI)
+- `skills/core/milestones/SKILL.md` — Phase-based progress tracking
+- `skills/core/ui-ux/SKILL.md` — Look good out of the gate
 
 **Load at Session 8+:**
-- `skills/core/launch-prep.md` — When ready to ship
+- `skills/core/launch-prep/SKILL.md` — When ready to ship
 
 ### Step 2: Load Stack Skills (Based on Q4)
 
 Based on chosen tech stack, read relevant skill files:
-- Next.js → `skills/stacks/nextjs.md`
-- Supabase → `skills/stacks/supabase.md`
-- Tailwind → `skills/stacks/tailwind.md`
+- Next.js → `skills/stacks/nextjs/SKILL.md`
+- Supabase → `skills/stacks/supabase/SKILL.md`
+- Tailwind → `skills/stacks/tailwind/SKILL.md`
 - etc.
 
 ### Step 3: Load Pattern Skills (Based on Features)
 
 If project needs specific patterns:
-- Authentication → `skills/patterns/authentication.md`
-- File uploads → `skills/patterns/file-uploads.md`
-- Background jobs → `skills/patterns/background-jobs.md`
+- Authentication → `skills/patterns/authentication/SKILL.md`
+- File uploads → `skills/patterns/file-uploads/SKILL.md`
+- Background jobs → `skills/patterns/background-jobs/SKILL.md`
 - etc.
 
 ### Step 4: Load Domain Skills (If Applicable)
 
 If project is in a specialized domain:
-- Fintech → `skills/domains/fintech.md`
-- E-commerce → `skills/domains/ecommerce.md`
-- Healthcare → `skills/domains/healthcare.md`
+- Fintech → `skills/domains/fintech/SKILL.md`
+- E-commerce → `skills/domains/ecommerce/SKILL.md`
+- Healthcare → `skills/domains/healthcare/SKILL.md`
 - etc.
 
 ### Step 5: Verify Current Documentation
@@ -500,9 +500,9 @@ These activate automatically based on session number. **For small/MVP builds (3-
 | Trigger | Default | Small Build (3-5 sessions) |
 |---------|---------|---------------------------|
 | Review milestones, check if on track | Session 5+ | Session 2+ |
-| Load `skills/core/launch-prep.md` | Session 8+ | Session 3+ |
+| Load `skills/core/launch-prep/SKILL.md` | Session 8+ | Session 3+ |
 | Real Usage Gate — pause features, use app for real, fix friction | Session 10+ | Before final session |
-| Load `skills/core/production-readiness.md` checklist | Before launch | Before launch |
+| Load `skills/core/production-readiness/SKILL.md` checklist | Before launch | Before launch |
 
 **Rule:** If the project is close to done earlier than expected, trigger earlier. Don't wait for a session number — use context.
 ```
@@ -754,11 +754,11 @@ When core features complete:
 
 ## Production Readiness Checklist
 
-Before launch, verify all items in `skills/core/production-readiness.md`.
+Before launch, verify all items in `skills/core/production-readiness/SKILL.md`.
 
 Quick check:
-- [ ] Security rules followed (see skills/core/security.md)
-- [ ] Testing complete (see skills/core/testing.md)
+- [ ] Security rules followed (see skills/core/security/SKILL.md)
+- [ ] Testing complete (see skills/core/testing/SKILL.md)
 - [ ] Error handling in place
 - [ ] Monitoring configured
 - [ ] Documentation complete

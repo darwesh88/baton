@@ -1,3 +1,12 @@
+---
+name: cost-awareness
+description: >-
+  AI cost tracking and optimization. Covers model pricing, model selection
+  guide, cost-saving practices, and session cost tracking.
+  Use when discussing AI costs, choosing models, optimizing token usage,
+  or when spending seems high.
+---
+
 # Cost Awareness Skill
 
 > AI isn't free. Know what you're spending.

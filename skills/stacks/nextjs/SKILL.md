@@ -1,3 +1,12 @@
+---
+name: nextjs
+description: >-
+  Next.js App Router patterns and conventions for production applications.
+  Covers Server Components, Server Actions, route groups, loading/error
+  states, and common pitfalls. Use when working with Next.js 14+,
+  React Server Components, or App Router projects.
+---
+
 # Next.js Skill File
 
 > Proven patterns from production Next.js projects. Check here before searching the web.

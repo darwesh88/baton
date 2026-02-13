@@ -3,15 +3,16 @@ const IDE_MAP = {
   'Claude Code': { file: 'CLAUDE.md', template: 'CLAUDE.md.template' },
   'Cursor': { file: '.cursorrules', template: 'cursorrules.template' },
   'Windsurf': { file: '.windsurfrules', template: 'cursorrules.template' },
+  'Codex': { file: 'AGENTS.md', template: null },  // AGENTS.md generated directly
   'Kiro': { file: 'CLAUDE.md', template: 'CLAUDE.md.template' },
   'Warp': { file: 'CLAUDE.md', template: 'CLAUDE.md.template' },
   'Other': { file: 'CLAUDE.md', template: 'CLAUDE.md.template' },
 };
 
-// Stack → which skill files to copy into stacks/
+// Stack → which skill directories to copy into stacks/
 const STACK_MAP = {
-  'Next.js + Supabase': ['nextjs.md', 'supabase.md'],
-  'Next.js + other': ['nextjs.md'],
+  'Next.js + Supabase': ['nextjs', 'supabase'],
+  'Next.js + other': ['nextjs'],
   'React + Node': [],
   'Python': [],
   'Other': [],

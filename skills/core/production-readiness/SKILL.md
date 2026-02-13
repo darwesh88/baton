@@ -1,3 +1,12 @@
+---
+name: production-readiness
+description: >-
+  Pre-launch production checklist covering security, error handling,
+  monitoring, database, deployment, UX polish, performance, analytics,
+  and legal requirements. Use before launching to real users or when
+  reviewing production readiness.
+---
+
 # Production Readiness Skill — Launch Checklist
 
 > Complete this checklist before launching to real users.
@@ -13,7 +22,7 @@
 
 ## 1. Security (Critical)
 
-See `skills/core/security.md` for details.
+See `skills/core/security/SKILL.md` for details.
 
 ### Must Have
 - [ ] No secrets in codebase

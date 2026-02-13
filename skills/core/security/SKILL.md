@@ -1,3 +1,12 @@
+---
+name: security
+description: >-
+  Universal security rules for every project. Covers secrets management,
+  database security, input validation, authentication, API security, and
+  common vulnerabilities. Use when building auth, handling user data,
+  setting up databases, or reviewing security.
+---
+
 # Security Skill — Universal Rules
 
 > These rules apply to EVERY project, regardless of stack or domain.

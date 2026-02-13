@@ -1,3 +1,12 @@
+---
+name: milestones
+description: >-
+  Project milestone tracking and scope creep detection. Defines standard
+  milestone phases (Foundation, MVP, Polish, Launch, Iterate) with session
+  targets and review checkpoints. Use when planning project phases,
+  detecting scope creep, or when milestones slip.
+---
+
 # Milestones Skill
 
 > Sessions are tactics. Milestones are strategy.
