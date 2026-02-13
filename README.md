@@ -1,37 +1,35 @@
 # Baton
 
-**Turn any AI into a self-managing developer. You just approve.**
+**The lifecycle protocol for AI-assisted building — interview to handoff, any tool, any skill level.**
+
+Every AI coding session starts the same way: you explain your project, the AI forgets it next time, and you start over. Baton fixes this permanently.
 
 ---
 
-## What Is This?
+## The Problem
 
-Baton is an AI orchestration protocol. Load one markdown file, and any AI coding assistant becomes:
+AI coding tools are powerful but stateless. Every session starts from zero. This causes:
 
-- A developer that writes code
-- A project manager that tracks progress
-- A documentation writer that maintains context
-- A system that hands off perfectly between sessions
+- **Context rot** — AI forgets decisions, patterns, and constraints between sessions
+- **Compounding errors** — without accumulated knowledge, the same mistakes repeat
+- **Manual overhead** — you become the documentation system, re-explaining everything
+- **Tool lock-in** — switch from Cursor to Claude Code and you lose all context
 
-You don't write code. You don't manage tasks. You don't document.
-**You make decisions. AI does everything else.**
+Developers lose ~200 hours/year to context loss. Baton eliminates it.
 
 ---
 
-## How It Works
+## What Baton Does
 
-```
-1. Copy BATON_v3.1.md + skills/ folder into your project
-2. Load it in any AI tool (Claude Code, Cursor, Windsurf, Kiro, Warp, etc.)
-3. AI interviews you about your project (8 questions)
-4. AI researches best practices for your stack
-5. AI generates all context files
-6. AI builds in small increments (1-4 tasks per session)
-7. AI documents everything and creates handoffs
-8. You say "next" to continue, or "done" to stop
-```
+Baton is a **methodology**, not just files. One markdown protocol that turns any AI into a self-managing project partner:
 
-That's it. The AI manages itself. You're the CEO.
+1. **Session Zero** — AI interviews you, researches your stack, generates all project context
+2. **Structured sessions** — AI builds in small increments, documents everything as it goes
+3. **Session handoffs** — every session ends with a handoff file the next session reads
+4. **Self-improving loop** — AI checks at session end for universal improvements to the protocol
+5. **Skills library** — curated best practices AI loads instead of guessing
+
+You make decisions. AI does everything else — coding, testing, documenting, and managing itself.
 
 ---
 
@@ -41,134 +39,152 @@ That's it. The AI manages itself. You're the CEO.
 ```bash
 npx create-baton
 ```
-Asks 3 questions, sets up everything — protocol, skills, IDE config, folder structure.
+Asks 3 questions, scaffolds everything — protocol, skills, AGENTS.md, IDE config, folder structure.
 
 ### Option 2: Copy the files
 1. Copy `BATON_v3.1.md` + `skills/` folder to your project root
 2. Open your AI coding tool
-3. Tell it: "Read BATON_v3.1.md and begin"
-
-### Option 3: Paste directly
-1. Copy the contents of `BATON_v3.1.md`
-2. Paste into any AI chat
-3. AI will start the discovery process (skills won't load without the folder)
+3. Tell it: *"Read BATON_v3.1.md and begin"*
 
 ---
 
-## What Gets Created
+## What Makes Baton Different
 
-After Baton completes, your project has:
+| Feature | AGENTS.md | CLAUDE.md | Baton |
+|---------|-----------|-----------|-------|
+| Static project context | Yes | Yes | Yes |
+| AI generates the context | No | No | **Yes** — AI interviews you, you don't write it |
+| Session handoffs | No | No | **Yes** — protocol-level, not a hack |
+| Self-improving loop | No | No | **Yes** — AI improves the process each session |
+| Skills library | No | No | **Yes** — curated patterns loaded per project |
+| Works across tools | Partial | Claude only | **Yes** — any AI tool that reads markdown |
+| Built for non-coders | No | No | **Yes** — orchestrators are first-class users |
+
+AGENTS.md tells AI about your project. Baton **runs** your project.
+
+---
+
+## How It Works
+
+```
+Session Zero:
+  AI interviews you (8 questions) → researches your stack → generates all context files
+
+Session 1+:
+  AI reads handoff → picks up where it left off → builds 1-4 tasks → creates new handoff
+
+Every session:
+  AI updates progress, documents patterns, checks for improvements, hands off cleanly
+```
+
+After Baton runs, your project has:
 
 ```
 your-project/
-├── .ai-rules/
-│   ├── project.md      # Your preferences and decisions
-│   ├── tech-stack.md   # Stack patterns and best practices
-│   ├── patterns.md     # Knowledge cache (grows over time)
-│   ├── structure.md    # Project file structure
-│   └── data-model.md   # Database schema (if applicable)
-├── handoff/
-│   └── SESSION_1.md    # Ready to start building
-├── CLAUDE.md           # IDE config (or .cursorrules, .windsurfrules)
-├── PROGRESS.md         # Session log
-├── BACKLOG.md          # Deferred items
-└── FEATURES.md         # User-facing docs
+├── BATON_v3.1.md          # The protocol (AI's operating manual)
+├── AGENTS.md              # Universal agent context (auto-generated)
+├── skills/                # Best practices library
+│   ├── core/              # Security, testing, anti-overengineering, etc.
+│   ├── stacks/            # Next.js, Supabase, etc.
+│   └── patterns/          # API integration, auth, etc.
+├── .ai-rules/             # Project context (AI-generated, grows over time)
+│   ├── project.md         # Your preferences and decisions
+│   ├── tech-stack.md      # Stack patterns
+│   ├── patterns.md        # Knowledge cache — compound learning
+│   └── structure.md       # Project file structure
+├── handoff/               # Session handoff files
+│   ├── SESSION_1.md
+│   └── SESSION_2.md       # Each session picks up from the last
+├── CLAUDE.md              # IDE config (or .cursorrules, .windsurfrules)
+├── PROGRESS.md            # Session log
+└── BACKLOG.md             # Deferred items
 ```
-
-Every session, the AI updates these files. Context is never lost.
-
----
-
-## Why This Works
-
-**Problem:** AI forgets everything between sessions. You repeat context. Quality drops.
-
-**Solution:** AI documents itself. Every session ends with a handoff file. Next session picks up exactly where you left off.
-
-**Result:**
-- 14+ session projects with consistent quality
-- Production apps built by non-coders
-- Zero context loss between sessions
-
----
-
-## Proof
-
-This protocol was developed across 28+ sessions on two production projects:
-
-- **PropertyPulse** — UAE property lease management SaaS
-- **Jewellers ERP** — Multi-module business system with live data
-
-Both built by someone who doesn't write code. Both in production.
 
 ---
 
 ## Skills Library
 
-The `skills/` folder contains proven patterns from real projects:
+Skills are curated best practices in [SKILL.md format](https://agentskills.io/specification) — compatible with Claude Code, Codex, and the broader agent ecosystem.
 
-```
-skills/
-├── core/        # Security, testing, UI/UX, production-readiness, anti-overengineering
-├── stacks/      # Next.js, Supabase, Tailwind, etc.
-├── patterns/    # Authentication, file uploads, background jobs
-└── domains/     # E-commerce, SaaS billing, ERP accounting
-```
+AI loads relevant skills instead of searching the web. Faster. More reliable. Cheaper.
 
-AI checks skills first before searching the web. Faster. More reliable.
+**Core skills** (always loaded):
+- `security` — secrets, RLS, input validation, auth, HTTPS
+- `testing` — build verification, smoke tests, automated testing levels
+- `anti-overengineering` — YAGNI enforcement, size limits, complexity checks
+- `ui-ux` — design defaults, responsive rules, accessibility basics
+- `production-readiness` — full launch checklist
+- `milestones` — phase tracking and scope creep detection
+- `cost-awareness` — model selection, token optimization, budget tracking
+- `launch-prep` — pre-launch questions, launch options, post-launch protocol
 
----
+**Stack skills** (loaded based on your tech choice):
+- `nextjs` — App Router, Server Components, Server Actions, common pitfalls
+- `supabase` — RLS, client setup, migrations, storage, type generation
 
-## Works With
-
-- Claude (claude.ai, Claude Code)
-- Cursor
-- Windsurf
-- Kiro
-- Warp
-- Any AI coding assistant that can read files
-
-The protocol is tool-agnostic. It's just markdown.
+**Pattern skills** (loaded based on features):
+- `api-integration` — retry logic, error handling, AI/LLM API specifics
 
 ---
 
-## Project Structure
+## Works With Every Tool
 
-```
-baton/
-├── BATON_v3.1.md       # The core protocol (start here)
-├── SESSION_0.md        # v3.0 (legacy reference)
-├── skills/             # Proven patterns library
-│   ├── core/           # Universal rules (always loaded)
-│   ├── stacks/         # Tech stack guides
-│   ├── patterns/       # Common implementations
-│   └── domains/        # Business domain knowledge
-├── templates/          # IDE config templates
-├── examples/           # Real project examples (coming)
-└── guides/             # Tool-specific setup guides (coming)
-```
+| Tool | Config File | Status |
+|------|------------|--------|
+| Claude Code | `CLAUDE.md` | Full support |
+| Cursor | `.cursorrules` | Full support |
+| Windsurf | `.windsurfrules` | Full support |
+| Codex (OpenAI) | `AGENTS.md` | Full support |
+| Kiro | `CLAUDE.md` | Full support |
+| Warp | `CLAUDE.md` | Full support |
+| Any AI chat | Paste protocol | Works (no skills) |
+
+The protocol is tool-agnostic. It's just markdown. The CLI generates the right config file for your tool.
+
+---
+
+## Proof
+
+**GhostPost** — a tweet scoring app built entirely with Baton:
+- 7 sessions, 2 different AI tools (Kiro → Warp)
+- 2,196 lines of working code
+- 247 lines of accumulated patterns (compound knowledge)
+- Total cost: $2.60
+- Zero context loss despite switching tools mid-project
+
+The handoff system meant Warp picked up exactly where Kiro left off. No re-explanation. No lost decisions.
+
+---
+
+## Who Is This For
+
+**AI Orchestrators** — people who direct AI to build software without writing code themselves. Baton was built by one.
+
+**Developers** — anyone tired of re-explaining their project to AI every session. Baton handles the context management so you focus on building.
+
+**Teams** — multiple people (or AIs) working on the same project. Handoff files mean anyone can pick up where someone else left off.
 
 ---
 
 ## Philosophy
 
-1. **AI does the work, human makes decisions**
-2. **Small increments over big ambitions**
-3. **Documentation is not optional**
-4. **The protocol improves over time, but stays simple**
-5. **Works everywhere, depends on nothing**
+1. **AI does the work, human makes decisions** — you're the CEO, not the developer
+2. **Context compounds** — every session makes the next one better
+3. **Small increments over big ambitions** — 1-4 tasks per session, always shippable
+4. **The protocol improves itself** — AI checks for universal improvements at session end
+5. **No infrastructure** — if it needs a server, database, or API key, it's not Baton's job
 
 ---
 
 ## Contributing
 
-This protocol evolves through real usage. If you discover:
+Baton evolves through real usage. If you discover:
 
-- A pattern that saves significant time
-- A gotcha that cost >30 minutes to debug
-- A workflow improvement that applies universally
+- A pattern that saves significant time → add it as a skill
+- A gotcha that cost >30 minutes to debug → document it
+- A workflow improvement that applies universally → open a PR
 
-Open a PR. The protocol should get better, not just bigger.
+Skills use the [SKILL.md standard](https://agentskills.io/specification). See any existing skill for the format.
 
 ---
 
@@ -178,8 +194,4 @@ MIT — Use it however you want.
 
 ---
 
-## Meta
-
-- **Version:** 3.1
-- **Created:** 2026
-- **Built with:** Human-AI collaboration
+**Version 3.1** — Built with human-AI collaboration, tested across real production projects.
