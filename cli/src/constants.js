@@ -11,9 +11,9 @@ const IDE_MAP = {
 
 // Stack → which skill directories to copy into stacks/
 const STACK_MAP = {
-  'Next.js + Supabase': ['nextjs', 'supabase'],
-  'Next.js + other': ['nextjs'],
-  'React + Node': [],
+  'Next.js + Supabase': ['nextjs', 'supabase', 'tailwind', 'shadcn', 'typescript', 'vercel'],
+  'Next.js + other': ['nextjs', 'tailwind', 'shadcn', 'typescript', 'vercel'],
+  'React + Node': ['tailwind', 'typescript', 'prisma'],
   'Python': [],
   'Other': [],
 };

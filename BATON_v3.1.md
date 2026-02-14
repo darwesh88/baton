@@ -92,23 +92,29 @@ Based on chosen tech stack, read relevant skill files:
 - Next.js → `skills/stacks/nextjs/SKILL.md`
 - Supabase → `skills/stacks/supabase/SKILL.md`
 - Tailwind → `skills/stacks/tailwind/SKILL.md`
-- etc.
+- shadcn/ui → `skills/stacks/shadcn/SKILL.md`
+- TypeScript → `skills/stacks/typescript/SKILL.md`
+- Prisma → `skills/stacks/prisma/SKILL.md`
+- Vercel → `skills/stacks/vercel/SKILL.md`
 
 ### Step 3: Load Pattern Skills (Based on Features)
 
 If project needs specific patterns:
 - Authentication → `skills/patterns/authentication/SKILL.md`
+- Database design → `skills/patterns/database-design/SKILL.md`
 - File uploads → `skills/patterns/file-uploads/SKILL.md`
-- Background jobs → `skills/patterns/background-jobs/SKILL.md`
-- etc.
+- Payments → `skills/patterns/payments/SKILL.md`
+- Email → `skills/patterns/email/SKILL.md`
+- SEO → `skills/patterns/seo/SKILL.md`
+- API integration → `skills/patterns/api-integration/SKILL.md`
 
 ### Step 4: Load Domain Skills (If Applicable)
 
 If project is in a specialized domain:
-- Fintech → `skills/domains/fintech/SKILL.md`
+- SaaS → `skills/domains/saas/SKILL.md`
 - E-commerce → `skills/domains/ecommerce/SKILL.md`
-- Healthcare → `skills/domains/healthcare/SKILL.md`
-- etc.
+- Portfolio → `skills/domains/portfolio/SKILL.md`
+- API service → `skills/domains/api/SKILL.md`
 
 ### Step 5: Verify Current Documentation
 
