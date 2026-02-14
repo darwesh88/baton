@@ -135,6 +135,25 @@ Tell the user:
 
 After research, summarize findings in 3-5 bullet points before proceeding.
 
+### Step 7: Condense Skills into Tech Stack
+
+After reading all relevant skills (Steps 1-4), extract only the rules, patterns, and gotchas that apply to THIS project. Write them into `.ai-rules/tech-stack.md` during file generation (Phase 3).
+
+**What to extract:**
+- Stack-specific patterns the project will actually use
+- Security rules relevant to chosen stack
+- Common pitfalls for this exact combination of tools
+- Key commands and workflows
+
+**What to leave out:**
+- Rules for tools/patterns the project doesn't use
+- Generic advice already covered in core skills
+- Setup instructions (only needed once)
+
+**After Session 0:** Do NOT re-read `skills/` every session. Read `.ai-rules/tech-stack.md` instead — it contains everything this project needs, condensed. Only go back to `skills/` if you encounter a new problem area not covered by existing context (e.g., project adds payments mid-build → read `skills/patterns/payments/SKILL.md`, then update tech-stack.md).
+
+**The skills/ folder stays** as a reference library. Disk is free, tokens aren't.
+
 ---
 
 ## Phase 3: Generate Files
@@ -231,8 +250,11 @@ See "IDE Config Templates" section below for exact templates.
 ```
 
 ### .ai-rules/tech-stack.md
+
+This file is the **condensed single source of technical truth** for this project. During Session 0, read all relevant skills and distill project-specific rules here. After Session 0, this replaces re-reading skills/.
+
 ```markdown
-# Tech Stack Best Practices
+# Tech Stack — [Project Name]
 
 ## Stack
 [Chosen stack from Q4]
@@ -241,15 +263,17 @@ See "IDE Config Templates" section below for exact templates.
 [From research - typical folder structure for this stack]
 
 ## Key Patterns
-[From research - 5-10 bullet points of best practices]
+[Condensed from skills — only rules that apply to THIS project's stack + features]
+[Example: if using Next.js + Supabase + Stripe, include patterns from all three]
 
 ## Common Commands
 [Build, dev, test commands for this stack]
 
 ## Pitfalls to Avoid
-[From research - 3-5 common mistakes]
+[Condensed from skills — mistakes specific to this project's tool combination]
 
-## Security Hardening (MANDATORY)
+## Security Rules
+[Condensed from skills/core/security + stack-specific security patterns]
 - RLS (Row Level Security) on ALL database tables
 - Zod validation on ALL form inputs and API routes
 - Environment variables for ALL secrets (never in code)
@@ -262,6 +286,12 @@ See "IDE Config Templates" section below for exact templates.
 1. Create SQL/migration file with descriptive name
 2. Ask user to run migration
 3. Wait for confirmation before building UI that depends on it
+
+## Skills Loaded
+[List which skills were condensed into this file, so future sessions know what's covered]
+- skills/core/security, skills/core/testing, ...
+- skills/stacks/nextjs, skills/stacks/supabase, ...
+- skills/patterns/authentication, ...
 ```
 
 ### .ai-rules/structure.md
@@ -632,11 +662,13 @@ Same content as .cursorrules — Windsurf uses similar format.
 1. Read context files in order:
    - `handoff/SESSION_N.md` (current session)
    - `.ai-rules/project.md`
-   - `.ai-rules/tech-stack.md`
+   - `.ai-rules/tech-stack.md` (condensed skills — this is your technical reference)
    - `.ai-rules/patterns.md`
    - `.ai-rules/structure.md`
    - `PROGRESS.md`
    - `BACKLOG.md`
+
+   **Do NOT re-read `skills/` every session.** Tech-stack.md already contains what you need. Only go back to skills/ when encountering a new problem area — then update tech-stack.md with what you learn.
 
 2. Run health check (after Session 2):
    - Run build command
@@ -712,10 +744,10 @@ After creating the handoff, ask:
 
 When working on any task:
 
-1. **Check `.ai-rules/patterns.md` FIRST** — Project-specific discoveries
-2. **Check `skills/core/`** — Universal security, testing, production rules
-3. **Check `skills/stacks/`** — Tech stack patterns
-4. **Check `skills/patterns/`** — Implementation patterns
+1. **Check `.ai-rules/tech-stack.md` FIRST** — Condensed skills for this project
+2. **Check `.ai-rules/patterns.md`** — Project-specific discoveries
+3. **Check `skills/` ONLY if needed** — For new problem areas not yet in tech-stack.md
+4. **Update tech-stack.md** — If you loaded a new skill, condense relevant parts into tech-stack.md
 5. **Only then web search** — If nothing found above
 6. **Document new findings** — Add to patterns.md or propose skill update
 
