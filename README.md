@@ -68,10 +68,10 @@ AGENTS.md tells AI about your project. Baton **runs** your project.
 
 ```
 Session Zero:
-  AI interviews you (8 questions) → researches your stack → generates all context files
+  AI interviews you (8 questions) → reads skills → condenses into one tech-stack file → generates all context
 
 Session 1+:
-  AI reads handoff → picks up where it left off → builds 1-4 tasks → creates new handoff
+  AI reads handoff + tech-stack (not all skills) → picks up where it left off → builds 1-4 tasks → creates new handoff
 
 Every session:
   AI updates progress, documents patterns, checks for improvements, hands off cleanly
@@ -89,7 +89,7 @@ your-project/
 │   └── patterns/          # API integration, auth, etc.
 ├── .ai-rules/             # Project context (AI-generated, grows over time)
 │   ├── project.md         # Your preferences and decisions
-│   ├── tech-stack.md      # Stack patterns
+│   ├── tech-stack.md      # Condensed skills — single source of technical truth
 │   ├── patterns.md        # Knowledge cache — compound learning
 │   └── structure.md       # Project file structure
 ├── handoff/               # Session handoff files
@@ -104,26 +104,21 @@ your-project/
 
 ## Skills Library
 
-Skills are curated best practices in [SKILL.md format](https://agentskills.io/specification) — compatible with Claude Code, Codex, and the broader agent ecosystem.
+26 curated skills in [SKILL.md format](https://agentskills.io/specification) — compatible with Claude Code, Codex, and the broader agent ecosystem.
 
-AI loads relevant skills instead of searching the web. Faster. More reliable. Cheaper.
+During Session Zero, AI reads relevant skills and **condenses** them into `.ai-rules/tech-stack.md` — a single file with only the rules that apply to your project. After that, AI reads one file instead of 15. Faster. Cheaper. More focused.
 
-**Core skills** (always loaded):
-- `security` — secrets, RLS, input validation, auth, HTTPS
-- `testing` — build verification, smoke tests, automated testing levels
-- `anti-overengineering` — YAGNI enforcement, size limits, complexity checks
-- `ui-ux` — design defaults, responsive rules, accessibility basics
-- `production-readiness` — full launch checklist
-- `milestones` — phase tracking and scope creep detection
-- `cost-awareness` — model selection, token optimization, budget tracking
-- `launch-prep` — pre-launch questions, launch options, post-launch protocol
+**Core skills** (8 — always loaded):
+`security` · `testing` · `anti-overengineering` · `ui-ux` · `production-readiness` · `milestones` · `cost-awareness` · `launch-prep`
 
-**Stack skills** (loaded based on your tech choice):
-- `nextjs` — App Router, Server Components, Server Actions, common pitfalls
-- `supabase` — RLS, client setup, migrations, storage, type generation
+**Stack skills** (7 — loaded based on your tech choice):
+`nextjs` · `supabase` · `tailwind` · `shadcn` · `typescript` · `prisma` · `vercel`
 
-**Pattern skills** (loaded based on features):
-- `api-integration` — retry logic, error handling, AI/LLM API specifics
+**Pattern skills** (7 — loaded based on features):
+`authentication` · `database-design` · `file-uploads` · `payments` · `email` · `seo` · `api-integration`
+
+**Domain skills** (4 — loaded based on project type):
+`saas` · `ecommerce` · `portfolio` · `api`
 
 ---
 
