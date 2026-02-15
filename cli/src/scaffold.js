@@ -24,8 +24,8 @@ function scaffold(dest, { tool, stack, projectName }) {
   copyDir(path.join(skillsSrc, 'core'), path.join(skillsDest, 'core'));
   copyDir(path.join(skillsSrc, 'patterns'), path.join(skillsDest, 'patterns'));
 
-  // Create domains/ (empty, for user to add)
-  fs.mkdirSync(path.join(skillsDest, 'domains'), { recursive: true });
+  // Always copy domains/
+  copyDir(path.join(skillsSrc, 'domains'), path.join(skillsDest, 'domains'));
 
   // Copy stack-specific skills (each is a directory with SKILL.md)
   const stackSkills = STACK_MAP[stack] || [];
@@ -44,7 +44,10 @@ function scaffold(dest, { tool, stack, projectName }) {
   const patternCount = fs.readdirSync(path.join(skillsDest, 'patterns')).filter(
     f => fs.statSync(path.join(skillsDest, 'patterns', f)).isDirectory()
   ).length;
-  results.push(`Copied skills/ (${coreCount} core + ${stackCount} stack + ${patternCount} pattern)`);
+  const domainCount = fs.readdirSync(path.join(skillsDest, 'domains')).filter(
+    f => fs.statSync(path.join(skillsDest, 'domains', f)).isDirectory()
+  ).length;
+  results.push(`Copied skills/ (${coreCount} core + ${stackCount} stack + ${patternCount} pattern + ${domainCount} domain)`);
 
   // 3. Create .ai-rules/ with stub files
   const aiRulesDir = path.join(dest, '.ai-rules');
