@@ -38,7 +38,7 @@ $ npx create-baton
   Setting up Baton...
 
   ✓ Copied BATON_v3.1.md
-  ✓ Copied skills/ (8 core + 2 stack + 1 pattern)
+  ✓ Copied skills/ (8 core + 6 stack + 7 pattern + 4 domain)
   ✓ Created .ai-rules/ (4 stub files)
   ✓ Created handoff/
   ✓ Created CLAUDE.md

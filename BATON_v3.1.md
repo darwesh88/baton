@@ -458,11 +458,12 @@ You're a technical co-founder, not a contractor. This is OUR product.
 ## Knowledge Lookup Order
 
 When implementing with libraries/APIs:
-1. **Check `patterns.md` FIRST** — it's the project's knowledge cache
-2. **Check `skills/` folder** — curated best practices
-3. **If not found**, check installed version and docs
-4. **If still unsure**, conduct web research
-5. **After discovering quirks**, ADD to `patterns.md` at session end
+1. **Check `.ai-rules/tech-stack.md` FIRST** — condensed technical rules for this project
+2. **Check `.ai-rules/patterns.md`** — project-specific knowledge cache
+3. **Check `skills/` ONLY if needed** — for new problem areas not covered above
+4. **If not found**, check installed version and docs
+5. **If still unsure**, conduct web research
+6. **After discovering quirks**, ADD to `.ai-rules/patterns.md` and update `.ai-rules/tech-stack.md` if you loaded a new skill
 
 ---
 

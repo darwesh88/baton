@@ -88,8 +88,15 @@ function scaffold(dest, { tool, stack, projectName }) {
       .replace(/\{\{TYPECHECK_COMMAND\}\}/g, 'npx tsc --noEmit')
       .replace(/\{\{PROJECT_RULES\}\}/g, '<!-- AI will add project-specific rules here -->');
 
-    fs.writeFileSync(path.join(dest, ide.file), templateContent);
-    results.push(`Created ${ide.file}`);
+    const idePath = path.join(dest, ide.file);
+    if (fs.existsSync(idePath)) {
+      const altIdeFile = getNextBatonFilename(dest, ide.file);
+      fs.writeFileSync(path.join(dest, altIdeFile), templateContent);
+      results.push(`${ide.file} exists - created ${altIdeFile} (review and merge manually if needed)`);
+    } else {
+      fs.writeFileSync(idePath, templateContent);
+      results.push(`Created ${ide.file}`);
+    }
   } else {
     // Codex — uses AGENTS.md directly (already generated in step 6)
     results.push('Using AGENTS.md as IDE config (Codex)');
@@ -97,17 +104,34 @@ function scaffold(dest, { tool, stack, projectName }) {
 
   // 6. Generate AGENTS.md (universal standard for AI coding agents)
   const agentsMd = generateAgentsMd(projectName, stackLabel);
-  fs.writeFileSync(path.join(dest, 'AGENTS.md'), agentsMd);
-  results.push('Generated AGENTS.md');
+  const agentsPath = path.join(dest, 'AGENTS.md');
+  if (fs.existsSync(agentsPath)) {
+    const altAgentsFile = getNextAgentsFilename(dest);
+    fs.writeFileSync(path.join(dest, altAgentsFile), agentsMd);
+    results.push(`AGENTS.md exists - created ${altAgentsFile} (review and merge manually if needed)`);
+  } else {
+    fs.writeFileSync(agentsPath, agentsMd);
+    results.push('Generated AGENTS.md');
+  }
 
-  // 7. Create PROGRESS.md, BACKLOG.md, FEATURES.md
-  fs.writeFileSync(path.join(dest, 'PROGRESS.md'),
-    `# Progress — ${projectName}\n\n## Sessions\n\n_No sessions yet. AI will log progress here._\n`);
-  fs.writeFileSync(path.join(dest, 'BACKLOG.md'),
-    `# Backlog — ${projectName}\n\n_Deferred items go here. AI adds items during sessions._\n`);
-  fs.writeFileSync(path.join(dest, 'FEATURES.md'),
-    `# Features — ${projectName}\n\n_User-facing feature documentation. AI updates this as features ship._\n`);
-  results.push('Created PROGRESS.md, BACKLOG.md, FEATURES.md');
+  // 7. Create PROGRESS.md, BACKLOG.md, FEATURES.md (non-destructive)
+  const docsToCreate = {
+    'PROGRESS.md': `# Progress — ${projectName}\n\n## Sessions\n\n_No sessions yet. AI will log progress here._\n`,
+    'BACKLOG.md': `# Backlog — ${projectName}\n\n_Deferred items go here. AI adds items during sessions._\n`,
+    'FEATURES.md': `# Features — ${projectName}\n\n_User-facing feature documentation. AI updates this as features ship._\n`,
+  };
+
+  for (const [file, content] of Object.entries(docsToCreate)) {
+    const filePath = path.join(dest, file);
+    if (fs.existsSync(filePath)) {
+      const altFile = getNextBatonFilename(dest, file);
+      fs.writeFileSync(path.join(dest, altFile), content);
+      results.push(`${file} exists - created ${altFile} (review and merge manually if needed)`);
+    } else {
+      fs.writeFileSync(filePath, content);
+      results.push(`Created ${file}`);
+    }
+  }
 
   return results;
 }
@@ -191,6 +215,26 @@ function copyDir(src, dest) {
       fs.copyFileSync(srcPath, destPath);
     }
   }
+}
+
+function getNextAgentsFilename(dest) {
+  let index = 2;
+  let name = `AGENTS${index}.md`;
+  while (fs.existsSync(path.join(dest, name))) {
+    index += 1;
+    name = `AGENTS${index}.md`;
+  }
+  return name;
+}
+
+function getNextBatonFilename(dest, baseFile) {
+  let index = 1;
+  let name = `${baseFile}.baton.new`;
+  while (fs.existsSync(path.join(dest, name))) {
+    index += 1;
+    name = `${baseFile}.baton${index}.new`;
+  }
+  return name;
 }
 
 module.exports = { scaffold };

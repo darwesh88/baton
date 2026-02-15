@@ -24,7 +24,7 @@ This project uses **Baton Protocol** — an AI orchestration system where:
 
 | Priority | File | Purpose |
 |----------|------|---------|
-| 1 | `handoff/SESSION_N.md` | Current session tasks |
+| 1 | `handoff/SESSION_{{CURRENT_SESSION}}.md` | Current session tasks |
 | 2 | `.ai-rules/project.md` | Project decisions & rules |
 | 3 | `.ai-rules/tech-stack.md` | Stack patterns |
 | 4 | `.ai-rules/patterns.md` | Discovered quirks (check first!) |
@@ -66,7 +66,7 @@ This project uses **Baton Protocol** — an AI orchestration system where:
 1. Build passes
 2. New features work
 3. PROGRESS.md updated
-4. handoff/SESSION_{N+1}.md created
+4. `handoff/SESSION_{{NEXT_SESSION}}.md` created
 5. Ask: **"next"** or **"done"**?
 
 ---

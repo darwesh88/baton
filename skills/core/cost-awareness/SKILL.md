@@ -75,7 +75,7 @@ EXPENSIVE:
 (Tokens for search + results + processing)
 
 CHEAP:
-"Read skills/stacks/nextjs.md"
+"Read skills/stacks/nextjs/SKILL.md"
 (Just file read, minimal tokens)
 ```
 

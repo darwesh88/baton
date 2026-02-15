@@ -5,7 +5,7 @@ This project uses Baton — an AI orchestration protocol.
 
 ## Start Each Session
 
-1. Read `handoff/SESSION_N.md` (current session)
+1. Read `handoff/SESSION_{{CURRENT_SESSION}}.md` (current session)
 2. Read `.ai-rules/` files for context
 3. Run health check (build, verify previous work)
 4. Ask: Any feedback? Blockers?
@@ -23,7 +23,7 @@ This project uses Baton — an AI orchestration protocol.
 
 - Verify build passes
 - Update PROGRESS.md
-- Create `handoff/SESSION_{N+1}.md`
+- Create `handoff/SESSION_{{NEXT_SESSION}}.md`
 - Ask user: **"next"** or **"done"**?
 
 ## Skills (Check Before Web Search)
@@ -35,7 +35,7 @@ This project uses Baton — an AI orchestration protocol.
 
 ## Key Files
 
-- `handoff/SESSION_N.md` — Current session tasks
+- `handoff/SESSION_{{CURRENT_SESSION}}.md` — Current session tasks
 - `.ai-rules/project.md` — Decisions and rules
 - `.ai-rules/patterns.md` — Discovered quirks
 - `PROGRESS.md` — Session log
