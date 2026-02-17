@@ -49,7 +49,7 @@ function scaffold(dest, { tool, stack, projectName }) {
   ).length;
   results.push(`Copied skills/ (${coreCount} core + ${stackCount} stack + ${patternCount} pattern + ${domainCount} domain)`);
 
-  // 3. Create .ai-rules/ with stub files
+  // 3. Create .ai-rules/ with stub files (non-destructive)
   const aiRulesDir = path.join(dest, '.ai-rules');
   fs.mkdirSync(aiRulesDir, { recursive: true });
   const stubs = {
@@ -58,10 +58,21 @@ function scaffold(dest, { tool, stack, projectName }) {
     'patterns.md': `# Patterns & Quirks — ${projectName}\n\n> AI adds entries here as it discovers gotchas and solutions.\n`,
     'structure.md': `# Project Structure — ${projectName}\n\n> AI will fill this once the project scaffolding is set up.\n`,
   };
+  let createdStubCount = 0;
   for (const [file, content] of Object.entries(stubs)) {
-    fs.writeFileSync(path.join(aiRulesDir, file), content);
+    const stubPath = path.join(aiRulesDir, file);
+    if (fs.existsSync(stubPath)) {
+      const altStubFile = getNextBatonFilename(aiRulesDir, file);
+      fs.writeFileSync(path.join(aiRulesDir, altStubFile), content);
+      results.push(`.ai-rules/${file} exists - created .ai-rules/${altStubFile} (review and merge manually if needed)`);
+    } else {
+      fs.writeFileSync(stubPath, content);
+      createdStubCount += 1;
+    }
   }
-  results.push('Created .ai-rules/ (4 stub files)');
+  if (createdStubCount > 0) {
+    results.push(`Created .ai-rules/ (${createdStubCount} stub files)`);
+  }
 
   // 4. Create handoff/ with .gitkeep
   const handoffDir = path.join(dest, 'handoff');
@@ -155,9 +166,9 @@ ${stackLine}
 This project uses the Baton protocol for AI-assisted development.
 
 1. Read \`BATON_v3.1.md\` — the orchestration protocol
-2. Read \`.ai-rules/\` — project context files (AI-generated)
-3. Read \`skills/\` — curated best practices for this stack
-4. Check \`handoff/\` — session handoff files for continuity
+2. Read \`.ai-rules/tech-stack.md\` and \`.ai-rules/patterns.md\` — condensed project context
+3. Check \`handoff/\` — session handoff files for continuity
+4. Use \`skills/\` only for new problem areas not covered in \`.ai-rules/tech-stack.md\`
 
 ## Build & Development Commands
 
@@ -186,6 +197,7 @@ skills/                # Best practice skills
   core/                # Universal rules
   stacks/              # Stack-specific patterns
   patterns/            # Implementation patterns
+  domains/             # Domain-specific guidance
 handoff/               # Session handoff files
 PROGRESS.md            # Session progress log
 BACKLOG.md             # Deferred items
@@ -195,8 +207,9 @@ BACKLOG.md             # Deferred items
 
 This project follows the Baton protocol. Key rules:
 - Read BATON_v3.1.md before starting work
-- Check skills/ before web searching
-- Document discoveries in .ai-rules/patterns.md
+- Check .ai-rules/tech-stack.md first, then .ai-rules/patterns.md
+- Use skills/ only when needed for new problem areas
+- Document discoveries in .ai-rules/patterns.md and keep .ai-rules/tech-stack.md updated
 - Create handoff files at session end
 - Update PROGRESS.md after each session
 `;

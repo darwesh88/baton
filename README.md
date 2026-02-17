@@ -86,6 +86,7 @@ your-project/
 ├── skills/                # Best practices library
 │   ├── core/              # Security, testing, anti-overengineering, etc.
 │   ├── stacks/            # Next.js, Supabase, etc.
+│   ├── domains/           # SaaS, ecommerce, portfolio, API guidance
 │   └── patterns/          # API integration, auth, etc.
 ├── .ai-rules/             # Project context (AI-generated, grows over time)
 │   ├── project.md         # Your preferences and decisions
@@ -108,8 +109,11 @@ your-project/
 
 During Session Zero, AI reads relevant skills and **condenses** them into `.ai-rules/tech-stack.md` — a single file with only the rules that apply to your project. After that, AI reads one file instead of 15. Faster. Cheaper. More focused.
 
-**Core skills** (8 — always loaded):
-`security` · `testing` · `anti-overengineering` · `ui-ux` · `production-readiness` · `milestones` · `cost-awareness` · `launch-prep`
+**Core skills** (7 - always loaded):
+`security` · `testing` · `anti-overengineering` · `ui-ux` · `production-readiness` · `milestones` · `cost-awareness`
+
+**Launch-prep skill** (loaded when near ship, default Session 8+):
+`launch-prep`
 
 **Stack skills** (7 — loaded based on your tech choice):
 `nextjs` · `supabase` · `tailwind` · `shadcn` · `typescript` · `prisma` · `vercel`
@@ -180,6 +184,26 @@ Baton evolves through real usage. If you discover:
 - A workflow improvement that applies universally → open a PR
 
 Skills use the [SKILL.md standard](https://agentskills.io/specification). See any existing skill for the format.
+
+Project policies and contribution docs:
+
+- [Open Source Policy](OPEN_SOURCE_POLICY.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+- [Support](SUPPORT.md)
+
+---
+
+## Open Source Commitment
+
+Baton is and will remain fully open source.
+
+- No paid tiers
+- No closed-source add-ons
+- No monetization roadmap
+
+All core protocol, CLI, and skills work happens in public.
 
 ---
 

@@ -28,15 +28,17 @@ This project uses Baton — an AI orchestration protocol.
 
 ## Skills (Check Before Web Search)
 
-- `skills/core/` — Security, testing, production rules
-- `skills/stacks/` — {{STACK}} patterns
-- `skills/patterns/` — Implementation guides
+- `.ai-rules/tech-stack.md` — Condensed technical rules (read first)
 - `.ai-rules/patterns.md` — Project-specific quirks
+- `skills/core/` — Security, testing, production rules
+- `skills/stacks/` — {{STACK}} patterns (load only if needed)
+- `skills/patterns/` — Implementation guides (load only if needed)
 
 ## Key Files
 
 - `handoff/SESSION_{{CURRENT_SESSION}}.md` — Current session tasks
 - `.ai-rules/project.md` — Decisions and rules
+- `.ai-rules/tech-stack.md` — Condensed stack + pattern rules
 - `.ai-rules/patterns.md` — Discovered quirks
 - `PROGRESS.md` — Session log
 - `BACKLOG.md` — Deferred work
@@ -49,6 +51,7 @@ This project uses Baton — an AI orchestration protocol.
 - Zod validation on all inputs
 - Verify before declaring done
 - Document quirks in patterns.md
+- Update tech-stack.md when loading new skills
 - Create handoff before ending session
 
 ## Commands

@@ -36,7 +36,8 @@ This project uses **Baton Protocol** — an AI orchestration system where:
 
 ## Skills Library
 
-**Check these BEFORE web searching:**
+Use `.ai-rules/tech-stack.md` and `.ai-rules/patterns.md` first.
+Check these skill folders only for new problem areas not covered there:
 
 | Folder | Contains |
 |--------|----------|
@@ -75,7 +76,7 @@ This project uses **Baton Protocol** — an AI orchestration system where:
 
 1. **Verify before moving on** — Build must pass, feature must work
 2. **Document as you go** — Update structure.md, patterns.md
-3. **Skills before search** — Check skills/ before web research
+3. **Knowledge order** — Check `.ai-rules/tech-stack.md`, then `.ai-rules/patterns.md`, then `skills/` only if needed
 4. **Ask when unsure** — Never guess on business logic
 5. **Handoff is mandatory** — Session isn't done without next handoff
 

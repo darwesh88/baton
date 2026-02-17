@@ -184,8 +184,8 @@ Create the appropriate config file for the user's AI tool:
 | Claude Code | CLAUDE.md |
 | Cursor | .cursorrules |
 | Windsurf | .windsurfrules |
-| Kiro | .kiro/context.md |
-| Warp | .warp/rules/project.md |
+| Kiro | CLAUDE.md |
+| Warp | CLAUDE.md |
 | Multiple/Other | Create CLAUDE.md as universal fallback |
 
 **IDE Config Must Include:**
@@ -567,13 +567,13 @@ This project uses **Baton Protocol** — an AI orchestration system where:
 2. Follow the session protocol
 3. End by creating the next handoff
 
-**Current Session:** `handoff/SESSION_[N].md`
+**Current Session:** `handoff/SESSION_{{CURRENT_SESSION}}.md`
 
 ## Context Files (Read in Order)
 
 | Priority | File | Purpose |
 |----------|------|---------|
-| 1 | `handoff/SESSION_N.md` | Current session tasks |
+| 1 | `handoff/SESSION_{{CURRENT_SESSION}}.md` | Current session tasks |
 | 2 | `.ai-rules/project.md` | Project decisions & rules |
 | 3 | `.ai-rules/tech-stack.md` | Stack patterns |
 | 4 | `.ai-rules/patterns.md` | Discovered quirks |
@@ -582,7 +582,8 @@ This project uses **Baton Protocol** — an AI orchestration system where:
 
 ## Skills Library
 
-Check these BEFORE web searching:
+Use `.ai-rules/tech-stack.md` and `.ai-rules/patterns.md` first.
+Check these skill folders only for new problem areas not covered there:
 
 - `skills/core/` — Security, testing, production rules
 - `skills/stacks/` — Tech stack patterns
@@ -593,16 +594,17 @@ Check these BEFORE web searching:
 
 1. **Flexible tasks** — Do 1-4 tasks based on size (tiny=4, large=1)
 2. **Verify before moving on** — Build must pass, feature must work
-3. **Document as you go** — Update structure.md, patterns.md
-4. **Create handoff at end** — Next session file is mandatory
-5. **Ask when unsure** — Never guess on business logic
+3. **Knowledge order** — Check `.ai-rules/tech-stack.md`, then `.ai-rules/patterns.md`, then `skills/` only if needed
+4. **Document as you go** — Update structure.md, patterns.md
+5. **Create handoff at end** — Next session file is mandatory
+6. **Ask when unsure** — Never guess on business logic
 
 ## Session End Checklist
 
 - [ ] Build passes
 - [ ] New features work
 - [ ] PROGRESS.md updated
-- [ ] handoff/SESSION_{N+1}.md created
+- [ ] `handoff/SESSION_{{NEXT_SESSION}}.md` created
 - [ ] Ask user: "next" or "done"?
 ```
 
@@ -614,7 +616,7 @@ Check these BEFORE web searching:
 This project uses Baton — an AI orchestration system.
 
 ## Start Each Session
-1. Read handoff/SESSION_N.md (current session)
+1. Read handoff/SESSION_{{CURRENT_SESSION}}.md (current session)
 2. Read .ai-rules/ files for context
 3. Follow the tasks in the handoff
 
@@ -627,17 +629,20 @@ This project uses Baton — an AI orchestration system.
 ## End Each Session
 - Verify build passes
 - Update PROGRESS.md
-- Create handoff/SESSION_{N+1}.md
+- Create handoff/SESSION_{{NEXT_SESSION}}.md
 - Ask: "next" or "done"?
 
 ## Skills (Check Before Web Search)
+- .ai-rules/tech-stack.md — Condensed technical rules (read first)
+- .ai-rules/patterns.md — Project-specific quirks
 - skills/core/ — Universal rules
-- skills/stacks/ — Tech patterns
-- skills/patterns/ — Implementation guides
+- skills/stacks/ — Tech patterns (load only if needed)
+- skills/patterns/ — Implementation guides (load only if needed)
 
 ## Key Files
-- handoff/SESSION_N.md — Current session
+- handoff/SESSION_{{CURRENT_SESSION}}.md — Current session
 - .ai-rules/project.md — Decisions
+- .ai-rules/tech-stack.md — Condensed stack + pattern rules
 - .ai-rules/patterns.md — Quirks discovered
 - PROGRESS.md — Session log
 - BACKLOG.md — Deferred work
@@ -646,8 +651,11 @@ This project uses Baton — an AI orchestration system.
 - Never commit secrets
 - Always use environment variables
 - RLS on all database tables
+- Zod validation on all inputs
 - Verify before declaring done
 - Document quirks in patterns.md
+- Update tech-stack.md when loading new skills
+- Create handoff before ending session
 ```
 
 ### .windsurfrules (Windsurf)
@@ -695,7 +703,7 @@ Same content as .cursorrules — Windsurf uses similar format.
 - Update documentation as you go
 - If unsure about anything, ASK before building
 - If scope grows, pause and discuss
-- Check skills/ and patterns.md before web searching
+- Check `.ai-rules/tech-stack.md` and `.ai-rules/patterns.md` before web searching; use `skills/` only if needed
 
 ### Ending a Session
 
