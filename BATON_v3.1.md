@@ -601,9 +601,11 @@ Check these skill folders only for new problem areas not covered there:
 
 ## Session End Checklist
 
+- [ ] Presented completed work to user and got approval to end session
 - [ ] Build passes
 - [ ] New features work
 - [ ] PROGRESS.md updated
+- [ ] Committed (only after user approval)
 - [ ] `handoff/SESSION_{{NEXT_SESSION}}.md` created
 - [ ] Ask user: "next" or "done"?
 ```
@@ -707,20 +709,30 @@ Same content as .cursorrules — Windsurf uses similar format.
 
 ### Ending a Session
 
-**Verification Gate (Cannot Skip):**
+**Step 1 — Present and Ask (Cannot Skip):**
+Before doing anything else, summarise what was completed this session and ask:
+> "Ready to end the session and commit?"
+
+Do NOT commit, update docs, or create handoff until the user confirms.
+
+**Step 2 — Verification Gate (Cannot Skip, after user confirms):**
 1. Build passes — no errors
 2. New features work — demo to user
 3. No regressions — previous features still work
 
-**Documentation (Cannot Skip):**
+**Step 3 — Documentation (Cannot Skip):**
 4. Update PROGRESS.md with session summary
 5. Update structure.md if files created
 6. Update patterns.md if quirks discovered
 7. Update BACKLOG.md if items added/completed
 
-**Handoff (Cannot Skip):**
-8. Create handoff/SESSION_{N+1}.md
-9. Include "Lessons Learned" section
+**Step 4 — Commit (Cannot Skip):**
+8. Commit with session commit message format
+9. Never auto-commit — wait for user approval first
+
+**Step 5 — Handoff (Cannot Skip):**
+10. Create handoff/SESSION_{N+1}.md
+11. Include "Lessons Learned" section
 
 **Protocol Evolution (Cannot Skip):**
 10. Ask yourself: "Did I discover anything this session that would improve Baton for ALL future projects?"

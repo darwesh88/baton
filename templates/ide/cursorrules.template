@@ -21,10 +21,13 @@ This project uses Baton — an AI orchestration protocol.
 
 ## End Each Session
 
-- Verify build passes
-- Update PROGRESS.md
-- Create `handoff/SESSION_{{NEXT_SESSION}}.md`
-- Ask user: **"next"** or **"done"**?
+1. Summarise completed work and ask: **"Ready to end the session and commit?"**
+2. Wait for user confirmation — do NOT commit or create handoff until approved
+3. Verify build passes
+4. Update PROGRESS.md
+5. Commit (only after approval)
+6. Create `handoff/SESSION_{{NEXT_SESSION}}.md`
+7. Ask user: **"next"** or **"done"**?
 
 ## Skills (Check Before Web Search)
 
@@ -45,6 +48,7 @@ This project uses Baton — an AI orchestration protocol.
 
 ## Rules
 
+- Never auto-commit — always ask user before committing
 - Never commit secrets
 - Always use environment variables
 - RLS on all database tables

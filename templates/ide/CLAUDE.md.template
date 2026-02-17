@@ -64,11 +64,14 @@ Check these skill folders only for new problem areas not covered there:
 - ASK when unsure
 
 ### Ending
-1. Build passes
-2. New features work
-3. PROGRESS.md updated
-4. `handoff/SESSION_{{NEXT_SESSION}}.md` created
-5. Ask: **"next"** or **"done"**?
+**Do NOT commit or create handoff until user explicitly approves.**
+
+1. Present completed work — summarise what was built
+2. Ask: **"Ready to end the session and commit?"**
+3. Wait for user confirmation before proceeding
+4. Once approved: verify build passes, update PROGRESS.md, commit
+5. Create `handoff/SESSION_{{NEXT_SESSION}}.md`
+6. Ask: **"next"** or **"done"**?
 
 ---
 
@@ -79,6 +82,7 @@ Check these skill folders only for new problem areas not covered there:
 3. **Knowledge order** — Check `.ai-rules/tech-stack.md`, then `.ai-rules/patterns.md`, then `skills/` only if needed
 4. **Ask when unsure** — Never guess on business logic
 5. **Handoff is mandatory** — Session isn't done without next handoff
+6. **Never auto-commit** — User must explicitly approve before any commit or handoff
 
 ---
 
